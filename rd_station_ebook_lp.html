@@ -11,6 +11,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Merriweather:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   
+  <!-- Preload da imagem oficial do Mockup em 2K (Background do Hero) -->
+  <link rel="preload" as="image" href="https://email-editor-production.s3.amazonaws.com/images/811533/Ebook/Book_and_smartphone_displaying_d%E2%80%A6_2K_20260923191228.jpeg">
+  
   <style>
     /* ==========================================================================
        RESET & COMPATIBILIDADE RD STATION MARKETING (FULL-BLEED EDGES)
@@ -169,33 +172,95 @@
     .header-cta-btn svg { width: 14px; height: 14px; fill: #25D366; }
 
     /* ==========================================================================
-       HERO SECTION: CAPTURA DO EBOOK
+       HERO SECTION: CAPTURA DO EBOOK COM BACKGROUND MOCKUP DE PALCO
        ========================================================================== */
     .hero-section {
       position: relative;
-      padding: 56px 0 72px;
+      background-color: var(--ink);
+      /* Imagem oficial do Mockup em 2K como background do Hero */
+      background-image: url('https://email-editor-production.s3.amazonaws.com/images/811533/Ebook/Book_and_smartphone_displaying_d%E2%80%A6_2K_20260923191228.jpeg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center;
+      padding: clamp(52px, 6vw, 76px) 0 clamp(60px, 7vw, 88px);
       overflow: hidden;
       border-bottom: 1px solid var(--filete);
+      min-height: clamp(720px, 48vw, 880px);
+      display: flex;
+      align-items: center;
     }
 
-    /* Grafismo de Raios Canônico (22 linhas com opacidade ~0.5) */
-    .hero-bg-rays {
+    /* Sobreposição Theatrical Scrim:
+       - Escurece as asas laterais (0-28% e 72-100%) para máximo contraste e legibilidade do texto e do formulário;
+       - Mantém o palco central (33-67%) LÍMPIDO e BRILHANTE para o livro físico e smartphone se destacarem sob os holofotes;
+       - Gradiente vertical para transição suave com header no topo e Seção 01 na base. */
+    .hero-backdrop-overlay {
       position: absolute;
-      right: -100px;
-      top: -40px;
-      width: min(65vw, 680px);
-      opacity: 0.5;
+      inset: 0;
       pointer-events: none;
       z-index: 1;
+      background:
+        /* Transição vertical suave no topo e na base */
+        linear-gradient(to bottom,
+          rgba(20, 20, 20, 0.94) 0%,
+          rgba(20, 20, 20, 0.35) 12%,
+          rgba(20, 20, 20, 0) 24%,
+          rgba(20, 20, 20, 0) 74%,
+          rgba(20, 20, 20, 0.72) 88%,
+          #141414 100%
+        ),
+        /* Vinheta horizontal de palco: escurece as bordas, abre a luz no centro desobstruído */
+        linear-gradient(to right,
+          rgba(20, 20, 20, 0.96) 0%,
+          rgba(20, 20, 20, 0.90) 22%,
+          rgba(20, 20, 20, 0.45) 28%,
+          rgba(20, 20, 20, 0) 33%,
+          rgba(20, 20, 20, 0) 67%,
+          rgba(20, 20, 20, 0.45) 72%,
+          rgba(20, 20, 20, 0.90) 78%,
+          rgba(20, 20, 20, 0.96) 100%
+        );
     }
 
+    /* Grafismo de Raios Canônico (22 linhas com opacidade integrada) */
+    .hero-bg-rays {
+      position: absolute;
+      right: -80px;
+      top: -30px;
+      width: min(55vw, 560px);
+      opacity: 0.45;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .hero-wrap {
+      width: 100%;
+      max-width: 1540px;
+      margin: 0 auto;
+      padding: 0 clamp(20px, 3.5vw, 48px);
+      position: relative;
+      z-index: 3;
+      box-sizing: border-box;
+    }
+
+    /* Grid do Hero em 3 Colunas no Desktop:
+       Coluna 1 (Copy / Asa Esquerda): ~1fr
+       Coluna 2 (Mockup Stage / Palco Central): ~1.22fr (visão desobstruída do livro e celular sob os holofotes)
+       Coluna 3 (Formulário / Asa Direita): ~1fr */
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.12fr 0.88fr;
-      gap: 48px;
-      align-items: start;
+      grid-template-columns: minmax(280px, 1fr) minmax(280px, 1.22fr) minmax(280px, 1fr);
+      gap: clamp(20px, 2.5vw, 36px);
+      align-items: center;
       position: relative;
-      z-index: 2;
+    }
+
+    .hero-copy-col {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      z-index: 4;
     }
 
     .hero-badge {
@@ -210,7 +275,9 @@
       letter-spacing: 0.2em;
       text-transform: uppercase;
       color: var(--papel);
-      background: rgba(245, 241, 232, 0.04);
+      background: rgba(20, 20, 20, 0.72);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
       margin-bottom: 20px;
       width: fit-content;
     }
@@ -227,12 +294,13 @@
     .hero-title {
       font-family: var(--font-display);
       font-weight: 400;
-      font-size: clamp(38px, 5.2vw, 68px);
+      font-size: clamp(34px, 4.4vw, 58px);
       line-height: 0.92;
       letter-spacing: -0.01em;
       text-transform: uppercase;
       color: var(--papel);
       margin: 0 0 18px 0;
+      text-shadow: 0 2px 16px rgba(0, 0, 0, 0.75);
     }
 
     .hero-title span {
@@ -241,24 +309,80 @@
 
     .hero-subtitle {
       font-family: var(--font-serif);
-      font-size: clamp(17px, 1.8vw, 21px);
+      font-size: clamp(16px, 1.4vw, 19px);
       line-height: 1.55;
       color: var(--texto-2);
       margin: 0 0 24px 0;
       font-weight: 400;
+      text-shadow: 0 1px 8px rgba(0, 0, 0, 0.85);
     }
 
-    /* Imagem Mockup do Ebook */
-    .hero-media-wrap {
+    /* Destaques editoriais INDAC */
+    .hero-highlights {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 6px;
+      padding-top: 18px;
+      border-top: 1px solid var(--filete-suave);
+    }
+
+    .hero-highlight-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      color: rgba(245, 241, 232, 0.88);
+      line-height: 1.4;
+    }
+
+    .hero-highlight-item svg {
+      flex-shrink: 0;
+    }
+
+    /* Coluna Central: Palco do Mockup */
+    .hero-mockup-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      min-height: 520px;
       position: relative;
-      margin-top: 28px;
+      z-index: 3;
+    }
+
+    /* No desktop, o mockup é o background em destaque: a imagem de fundo brilha livre */
+    .hero-stage-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 20px;
+      background: rgba(20, 20, 20, 0.85);
+      border: 1px solid var(--filete-forte);
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--papel);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      margin-top: auto;
+      margin-bottom: 8px;
+    }
+
+    /* Card visual com img (escondido no desktop, ativado em tablet e mobile) */
+    .hero-mockup-card {
+      display: none;
+      width: 100%;
       border: 1px solid var(--filete);
       background: var(--ink-suave);
       border-radius: 0;
       overflow: hidden;
     }
 
-    .hero-media-wrap img {
+    .hero-mockup-card img {
       width: 100%;
       height: auto;
       display: block;
@@ -285,15 +409,23 @@
       color: var(--papel);
     }
 
+    /* Coluna do Formulário */
+    .hero-form-col {
+      position: relative;
+      z-index: 4;
+    }
+
     /* ==========================================================================
        CARD DE CAPTURA DO FORMULÁRIO (RD STATION)
        ========================================================================== */
     .capture-card-frame {
-      background: var(--ink-suave);
+      background: rgba(28, 28, 28, 0.94);
       border: 1px solid var(--filete-forte);
       border-radius: 0;
       padding: 34px 28px;
       position: relative;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
     }
 
     .capture-card-frame::before {
@@ -1033,13 +1165,62 @@
     /* ==========================================================================
        RESPONSIVIDADE (MOBILE & TABLET)
        ========================================================================== */
-    @media (max-width: 991px) {
-      .hero-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
+    @media (max-width: 1180px) and (min-width: 768px) {
       .hero-section {
-        padding: 40px 0 60px;
+        background-position: center top;
+        padding: 48px 0 64px;
+        min-height: auto;
+        display: block;
+      }
+      .hero-backdrop-overlay {
+        background: linear-gradient(to bottom,
+          rgba(20, 20, 20, 0.96) 0%,
+          rgba(20, 20, 20, 0.88) 35%,
+          rgba(20, 20, 20, 0.82) 70%,
+          #141414 100%
+        );
+      }
+      .hero-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+        align-items: start;
+      }
+      .hero-copy-col {
+        grid-column: 1 / -1;
+        text-align: center;
+        max-width: 760px;
+        margin: 0 auto 12px;
+      }
+      .hero-badge {
+        margin: 0 auto 16px;
+      }
+      .hero-title {
+        font-size: 42px;
+      }
+      .hero-subtitle {
+        font-size: 17px;
+        margin-bottom: 16px;
+      }
+      .hero-highlights {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px 24px;
+        border-top: none;
+        padding-top: 0;
+      }
+      .hero-mockup-col {
+        grid-column: 1;
+        min-height: auto;
+      }
+      .hero-stage-badge {
+        display: none !important;
+      }
+      .hero-mockup-card {
+        display: block !important;
+      }
+      .hero-form-col {
+        grid-column: 2;
       }
       .content-section, .respiro-section, .pathways-section, .quiz-feature-section {
         padding: 60px 0;
@@ -1047,7 +1228,20 @@
     }
 
     @media (max-width: 767px) {
-      /* Reordenação do hero no mobile: selo -> título -> apoio -> formulário -> mockup */
+      /* Hero Mobile: background escurecido com luz de topo + fluxo vertical estrito */
+      .hero-section {
+        background-image: 
+          linear-gradient(to bottom, rgba(20, 20, 20, 0.88) 0%, rgba(20, 20, 20, 0.96) 42%, #141414 100%),
+          url('https://email-editor-production.s3.amazonaws.com/images/811533/Ebook/Book_and_smartphone_displaying_d%E2%80%A6_2K_20260923191228.jpeg');
+        background-size: cover;
+        background-position: center top;
+        padding: 24px 0 48px;
+        min-height: auto;
+        display: block;
+      }
+      .hero-backdrop-overlay {
+        display: none;
+      }
       .hero-grid {
         display: flex;
         flex-direction: column;
@@ -1058,24 +1252,47 @@
       }
       .hero-badge {
         order: 1;
+        margin-bottom: 14px;
       }
       .hero-title {
         order: 2;
-        font-size: 34px;
+        font-size: 32px;
+        line-height: 0.94;
+        margin-bottom: 12px;
       }
       .hero-subtitle {
         order: 3;
+        font-size: 15px;
+        line-height: 1.5;
+        margin-bottom: 20px;
+      }
+      .hero-highlights {
+        display: none; /* Mantém a primeira tela objetiva e focada na conversão */
       }
       .hero-form-col {
         order: 4;
         width: 100%;
-      }
-      .hero-media-wrap {
-        order: 5;
-        width: 100%;
+        margin-bottom: 24px;
       }
       .capture-card-frame {
         padding: 24px 18px;
+      }
+      .hero-mockup-col {
+        order: 5;
+        width: 100%;
+        min-height: auto;
+      }
+      .hero-stage-badge {
+        display: none !important;
+      }
+      .hero-mockup-card {
+        display: block !important;
+      }
+      .hero-media-caption {
+        padding: 10px 14px;
+      }
+      .content-section, .respiro-section, .pathways-section, .quiz-feature-section {
+        padding: 60px 0;
       }
       .mobile-sticky-bar {
         display: block;
@@ -1117,12 +1334,15 @@
 
   <main>
     <!-- ==========================================================================
-         HERO SECTION: CAPTURA DO EBOOK
+         HERO SECTION: CAPTURA DO EBOOK COM BACKGROUND MOCKUP DE PALCO
          ========================================================================== -->
     <section class="hero-section" id="hero-captura">
+      <!-- Sobreposição Theatrical Scrim para legibilidade e destaque do centro -->
+      <div class="hero-backdrop-overlay" aria-hidden="true"></div>
+
       <!-- Grafismo de Raios Canônico (22 linhas completas do Design System INDAC) -->
-      <div class="hero-bg-rays">
-        <svg viewBox="0 0 200 200" fill="none" aria-hidden="true" style="width:100%;display:block">
+      <div class="hero-bg-rays" aria-hidden="true">
+        <svg viewBox="0 0 200 200" fill="none" style="width:100%;display:block">
           <g stroke="#d9342b" stroke-width="1.1">
             <line x1="100" y1="100" x2="100" y2="6"/>
             <line x1="100" y1="100" x2="124" y2="9"/>
@@ -1150,10 +1370,10 @@
         </svg>
       </div>
 
-      <div class="indac-container">
+      <div class="hero-wrap">
         <div class="hero-grid">
           
-          <!-- Coluna da Esquerda: Selo + Título + Apoio + Mockup -->
+          <!-- 1. Coluna de Copy (Asa Esquerda do Palco) -->
           <div class="hero-copy-col">
             <div class="hero-badge">
               <span class="hero-badge-dot"></span>
@@ -1168,9 +1388,37 @@
               Tudo o que não te contam, mas que muda tudo. Sua jornada autêntica do zero ao DRT.
             </p>
 
-            <!-- Imagem Mockup Oficial com dimensões intrínsecas -->
+            <!-- Destaques editoriais INDAC -->
+            <div class="hero-highlights">
+              <div class="hero-highlight-item">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#d9342b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>45 anos de formação cênica profissional em SP</span>
+              </div>
+              <div class="hero-highlight-item">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#d9342b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Passo a passo legal para solicitar o DRT</span>
+              </div>
+              <div class="hero-highlight-item">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#d9342b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Leitura completa em PDF para celular e desktop</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. Coluna Central: Spotlight do Mockup (Palco Central) -->
+          <div class="hero-mockup-col">
+            <!-- Selo de base no desktop (ancorado no piso de madeira sob os holofotes do background) -->
+            <div class="hero-stage-badge">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#d9342b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+              </svg>
+              <span>Edição Oficial · PDF + Smartphone</span>
+            </div>
+
+            <!-- Card visual com imagem do Mockup (ativo em Tablet e Mobile) -->
             <!-- TROCAR: URL do mockup em WebP no Gerenciador de Arquivos do RD -->
-            <div class="hero-media-wrap">
+            <div class="hero-mockup-card hero-media-wrap">
               <img 
                 id="hero-mockup-img"
                 src="https://email-editor-production.s3.amazonaws.com/images/811533/Ebook/Book_and_smartphone_displaying_d%E2%80%A6_2K_20260923191228.jpeg" 
@@ -1192,7 +1440,7 @@
             </div>
           </div>
 
-          <!-- Coluna da Direita: Card de Captura do RD Station -->
+          <!-- 3. Coluna da Direita: Card de Captura do RD Station (Asa Direita do Palco) -->
           <div class="hero-form-col">
             <div class="capture-card-frame" id="card-captura">
               
