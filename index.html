@@ -1,0 +1,2037 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ebook: O Guia (Não Tão) Secreto Para Se Tornar Ator | INDAC Escola de Atores</title>
+  <meta name="description" content="Baixe gratuitamente o guia definitivo do INDAC Escola de Atores sobre o ofício cênico, preparação vocal e corporal, audições e a jornada real para o DRT.">
+  
+  <!-- Fontes Oficiais INDAC (Google Fonts) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Merriweather:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    /* ==========================================================================
+       RESET & COMPATIBILIDADE RD STATION MARKETING (FULL-BLEED EDGES)
+       ========================================================================== */
+    html, body {
+      margin: 0 !important;
+      padding: 0 !important;
+      background-color: #141414 !important;
+      color: #f5f1e8 !important;
+      font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, sans-serif !important;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+      width: 100%;
+    }
+
+    /* Neutralização completa de containers externos do RD Station */
+    #bricks-page-wrapper,
+    .bricks-page-section,
+    .bricks-page-section > div,
+    .bricks-component,
+    .rd-section,
+    .rd-row,
+    .rd-column,
+    .rd-page,
+    .page,
+    .page-content,
+    .sc-container {
+      padding: 0 !important;
+      margin: 0 !important;
+      max-width: 100% !important;
+      width: 100% !important;
+      background-color: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
+    }
+
+    /* ==========================================================================
+       VARIÁVEIS DE DESIGN SYSTEM INDAC 2025
+       ========================================================================== */
+    :root {
+      --ink: #141414;
+      --ink-suave: #1c1c1c;
+      --ink-card: #202020;
+      --acento: #d9342b;
+      --acento-hover: #a8231d;
+      --papel: #f5f1e8;
+      --papel-sombra: #e8e2d4;
+      --filete: rgba(245, 241, 232, 0.14);
+      --filete-forte: rgba(245, 241, 232, 0.25);
+      --texto-secundario: rgba(245, 241, 232, 0.72);
+      --texto-suave: rgba(245, 241, 232, 0.50);
+      --verde-zap: #25d366;
+    }
+
+    ::selection {
+      background: var(--acento);
+      color: var(--papel);
+    }
+
+    * {
+      box-sizing: border-box !important;
+    }
+
+    /* Animações Sutis e Profissionais */
+    @keyframes indacRise {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes indacPulse {
+      0%, 100% { transform: scale(1); opacity: 0.9; }
+      50% { transform: scale(1.06); opacity: 1; }
+    }
+
+    @keyframes skeletonShimmer {
+      0% { background-position: -200% 0; }
+      100% { background-position: 200% 0; }
+    }
+
+    /* ==========================================================================
+       ESTILOS GERAIS DA LP
+       ========================================================================== */
+    .indac-wrapper {
+      background-color: #141414;
+      color: #f5f1e8;
+      width: 100%;
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .indac-container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+    }
+
+    /* ==========================================================================
+       HEADER OFICIAL INDAC
+       ========================================================================== */
+    .indac-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(20, 20, 20, 0.96);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--filete);
+      width: 100%;
+    }
+
+    .indac-header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 24px;
+      max-width: 1180px;
+      margin: 0 auto;
+      gap: 16px;
+    }
+
+    .indac-logo-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--papel);
+    }
+
+    .indac-logo-pill {
+      width: 14px;
+      height: 28px;
+      background: var(--acento);
+      border-radius: 999px;
+      flex-shrink: 0;
+    }
+
+    .indac-logo-text {
+      font-family: 'Anton', sans-serif;
+      font-size: 22px;
+      letter-spacing: 0.04em;
+      line-height: 1;
+      text-transform: uppercase;
+      color: var(--papel);
+    }
+
+    .indac-logo-sub {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--texto-secundario);
+      border-left: 1px solid var(--filete);
+      padding-left: 12px;
+      display: inline-block;
+    }
+
+    .indac-header-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .btn-header-zap {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(245, 241, 232, 0.06);
+      border: 1px solid var(--filete);
+      color: var(--papel);
+      padding: 9px 18px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .btn-header-zap:hover {
+      background: rgba(245, 241, 232, 0.14);
+      border-color: var(--papel);
+      color: var(--papel);
+    }
+
+    /* ==========================================================================
+       HERO SECTION: CAPTURA DO EBOOK
+       ========================================================================== */
+    .hero-section {
+      position: relative;
+      padding: 64px 0 80px;
+      overflow: hidden;
+      border-bottom: 1px solid var(--filete);
+    }
+
+    /* Grafismo Teatral de Fundo */
+    .hero-bg-rays {
+      position: absolute;
+      right: -80px;
+      top: -40px;
+      width: min(50vw, 520px);
+      opacity: 0.15;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.95fr;
+      gap: 48px;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 16px;
+      border: 1px solid var(--filete-forte);
+      border-radius: 999px;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--papel);
+      background: rgba(245, 241, 232, 0.04);
+      margin-bottom: 24px;
+    }
+
+    .hero-badge-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--acento);
+      border-radius: 999px;
+      display: inline-block;
+      animation: indacPulse 2s infinite ease-in-out;
+    }
+
+    .hero-title {
+      font-family: 'Anton', sans-serif;
+      font-weight: 400;
+      font-size: clamp(38px, 5.2vw, 68px);
+      line-height: 0.92;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+      color: var(--papel);
+      margin: 0 0 20px 0;
+    }
+
+    .hero-title span {
+      color: var(--acento);
+    }
+
+    .hero-subtitle {
+      font-family: 'Merriweather', Georgia, serif;
+      font-size: clamp(17px, 1.8vw, 21px);
+      line-height: 1.55;
+      color: var(--texto-secundario);
+      margin: 0 0 24px 0;
+      font-weight: 400;
+    }
+
+    .hero-desc {
+      font-size: 14px;
+      line-height: 1.65;
+      color: var(--texto-suave);
+      margin: 0 0 32px 0;
+      max-width: 58ch;
+    }
+
+    /* Imagem Mockup do Ebook */
+    .hero-media-wrap {
+      position: relative;
+      margin-top: 28px;
+      border: 1px solid var(--filete);
+      background: var(--ink-suave);
+      border-radius: 0;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+    }
+
+    .hero-media-wrap img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .hero-media-wrap:hover img {
+      transform: scale(1.02);
+    }
+
+    .hero-media-caption {
+      padding: 12px 18px;
+      background: rgba(20, 20, 20, 0.92);
+      border-top: 1px solid var(--filete);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--texto-secundario);
+    }
+
+    .hero-media-caption span:first-child {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--papel);
+    }
+
+    /* ==========================================================================
+       CARD DE CAPTURA DO FORMULÁRIO (RD STATION)
+       ========================================================================== */
+    .capture-card-frame {
+      background: var(--ink-suave);
+      border: 1px solid var(--filete-forte);
+      border-radius: 0;
+      padding: 36px 32px;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7);
+      position: relative;
+    }
+
+    .capture-card-frame::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--acento);
+    }
+
+    .capture-header {
+      margin-bottom: 24px;
+      transition: opacity 0.3s ease;
+    }
+
+    .capture-tag {
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--acento);
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .capture-title {
+      font-family: 'Anton', sans-serif;
+      font-size: 28px;
+      line-height: 1.05;
+      text-transform: uppercase;
+      color: var(--papel);
+      margin: 0 0 10px 0;
+      letter-spacing: 0.02em;
+    }
+
+    .capture-subtitle {
+      font-size: 13px;
+      line-height: 1.5;
+      color: var(--texto-secundario);
+      margin: 0;
+    }
+
+    /* Container do Formulário RD Station */
+    .rd-form-wrapper {
+      min-height: 220px;
+      position: relative;
+    }
+
+    /* Skeleton de Carregamento Elegante */
+    .rd-form-skeleton {
+      padding: 10px 0;
+      display: block;
+    }
+
+    .rd-form-skeleton.is-hidden {
+      display: none !important;
+    }
+
+    .skeleton-item {
+      background: linear-gradient(90deg, #181818 25%, #242424 50%, #181818 75%);
+      background-size: 200% 100%;
+      animation: skeletonShimmer 1.8s infinite ease-in-out;
+      border-radius: 0;
+    }
+
+    .skeleton-label {
+      width: 40%;
+      height: 12px;
+      margin-bottom: 8px;
+    }
+
+    .skeleton-input {
+      width: 100%;
+      height: 46px;
+      margin-bottom: 16px;
+      border: 1px solid rgba(245, 241, 232, 0.08);
+    }
+
+    .skeleton-btn {
+      width: 100%;
+      height: 52px;
+      border-radius: 999px !important;
+      background: linear-gradient(90deg, rgba(217, 52, 43, 0.3) 25%, rgba(217, 52, 43, 0.55) 50%, rgba(217, 52, 43, 0.3) 75%);
+      background-size: 200% 100%;
+      animation: skeletonShimmer 1.8s infinite ease-in-out;
+      margin-top: 10px;
+    }
+
+    /* ==========================================================================
+       ESTILIZAÇÃO RIGOROSA DO FORMULÁRIO DO RD STATION MARKETING
+       ========================================================================== */
+    #mt-lp-ebook-guia-secreto-95bee7fc70bce7a08668 form,
+    #mt-lp-ebook-guia-secreto-95bee7fc70bce7a08668 .bricks-form {
+      background: transparent !important;
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+
+    #mt-lp-ebook-guia-secreto-95bee7fc70bce7a08668 .bricks-form__fieldset {
+      margin: 0 !important;
+      padding: 0 !important;
+      border: none !important;
+    }
+
+    #mt-lp-ebook-guia-secreto-95bee7fc70bce7a08668 .bricks-form__field,
+    #mt-lp-ebook-guia-secreto-95bee7fc70bce7a08668 .fields-group {
+      margin-bottom: 16px !important;
+    }
+
+    #mt-lp-ebook-guia-secreto-95bee7fc70bce7a08668 label,
+    #mt-lp-ebook-guia-secreto-95bee7fc70bce7a08668 .bricks-form__label,
+    #mt-lp-ebook-guia-secreto-95bee7fc70bce7a08668 .fields-group label {
+      font-family: 'Montserrat', sans-serif !important;
+      font-size: 11px !important;
+      font-weight: 800 !important;
+      letter-spacing: 0.16em !important;
+      text-transform: uppercase !important;
+      color: var(--texto-secundario) !important;
+      margin-bottom: 8px !important;
+      display: block !important;
+    }
+
+    #mt-lp-ebook-guia-secreto-95bee7fc70bce7a08668 input[type="text"],
+    #mt-lp-ebook-guia-secreto-95bee7fc70bce7a08668 input[type="email"],
+    #mt-lp-ebook-guia-secreto-95bee7fc70bce7a08668 input[type="tel"],
+    #mt-lp-ebook-guia-secreto-95bee7fc70bce7a08668 input[type="number"],
+    #mt-lp-ebook-guia-secreto-95bee7fc70bce7a08668 select,
+    #mt-lp-ebook-guia-secreto-95bee7fc70bce7a08668 textarea,
+    #mt-lp-ebook-guia-secreto-95bee7fc70bce7a08668 .bricks-form__input {
+      width: 100% !important;
+      background: #141414 !important;
+      border: 1px solid rgba(245, 241, 232, 0.22) !important;
+      color: #f5f1e8 !important;
+      padding: 15px 16px !important;
+      font-family: 'Montserrat', sans-serif !important;
+      font-size: 14px !important;
+      border-radius: 0 !important;
+      box-sizing: border-box !important;
+      outline: none !important;
+      transition: border-color 0.2s ease, background 0.2s ease !important;
+    }
+
+    #mt-lp-ebook-guia-secreto-95bee7fc70bce7a08668 input::placeholder,
+    #mt-lp-ebook-guia-secreto-95bee7fc70bce7a08668 textarea::placeholder {
+      color: rgba(245, 241, 232, 0.45) !important;
+    }
+
+    #mt-lp-ebook-guia-secreto-95bee7fc70bce7a08668 input:focus,
+    #mt-lp-ebook-guia-secreto-95bee7fc70bce7a08668 select:focus,
+    #mt-lp-ebook-guia-secreto-95bee7fc70bce7a08668 textarea:focus {
+      border-color: var(--acento) !important;
+      background: #181818 !important;
+    }
+
+    /* LGPD e Checkboxes do RD Station */
+    #mt-lp-ebook-guia-secreto-95bee7fc70bce7a08668 input[type="checkbox"] {
+      width: 18px !important;
+      height: 18px !important;
+      accent-color: var(--acento) !important;
+      cursor: pointer !important;
+      margin: 0 10px 0 0 !important;
+      flex-shrink: 0 !important;
+    }
+
+    #mt-lp-ebook-guia-secreto-95bee7fc70bce7a08668 .bricks-form__field--checkbox,
+    #mt-lp-ebook-guia-secreto-95bee7fc70bce7a08668 .bricks-form__privacy-policy {
+      display: flex !important;
+      align-items: flex-start !important;
+      margin-top: 14px !important;
+      margin-bottom: 18px !important;
+    }
+
+    #mt-lp-ebook-guia-secreto-95bee7fc70bce7a08668 .bricks-form__field--checkbox label,
+    #mt-lp-ebook-guia-secreto-95bee7fc70bce7a08668 .bricks-form__privacy-policy label,
+    #mt-lp-ebook-guia-secreto-95bee7fc70bce7a08668 .bricks-form__label--checkbox {
+      display: inline !important;
+      font-size: 11px !important;
+      font-weight: 500 !important;
+      letter-spacing: 0.02em !important;
+      text-transform: none !important;
+      color: var(--texto-secundario) !important;
+      line-height: 1.5 !important;
+      cursor: pointer !important;
+      margin: 0 !important;
+    }
+
+    #mt-lp-ebook-guia-secreto-95bee7fc70bce7a08668 .bricks-form__field--checkbox a,
+    #mt-lp-ebook-guia-secreto-95bee7fc70bce7a08668 .bricks-form__privacy-policy a {
+      color: var(--acento) !important;
+      text-decoration: underline !important;
+    }
+
+    /* Mensagens de erro de validação do RD Station */
+    #mt-lp-ebook-guia-secreto-95bee7fc70bce7a08668 .error,
+    #mt-lp-ebook-guia-secreto-95bee7fc70bce7a08668 span.error,
+    #mt-lp-ebook-guia-secreto-95bee7fc70bce7a08668 .bricks-form__error {
+      color: #ff5252 !important;
+      font-size: 11px !important;
+      font-weight: 700 !important;
+      letter-spacing: 0.04em !important;
+      text-transform: none !important;
+      margin-top: 6px !important;
+      margin-bottom: 10px !important;
+      display: block !important;
+    }
+
+    /* Botão de Envio com Estética INDAC */
+    #mt-lp-ebook-guia-secreto-95bee7fc70bce7a08668 button,
+    #mt-lp-ebook-guia-secreto-95bee7fc70bce7a08668 input[type="submit"],
+    #mt-lp-ebook-guia-secreto-95bee7fc70bce7a08668 .rd-button,
+    #mt-lp-ebook-guia-secreto-95bee7fc70bce7a08668 .bricks-button,
+    #mt-lp-ebook-guia-secreto-95bee7fc70bce7a08668 .bricks-form__submit-button {
+      width: 100% !important;
+      background: var(--acento) !important;
+      color: #f5f1e8 !important;
+      border: none !important;
+      padding: 18px 24px !important;
+      border-radius: 999px !important;
+      font-family: 'Montserrat', sans-serif !important;
+      font-size: 13px !important;
+      font-weight: 800 !important;
+      letter-spacing: 0.16em !important;
+      text-transform: uppercase !important;
+      cursor: pointer !important;
+      transition: all 0.22s ease !important;
+      box-shadow: 0 8px 24px rgba(217, 52, 43, 0.35) !important;
+      display: inline-block !important;
+      text-align: center !important;
+      margin-top: 10px !important;
+      box-sizing: border-box !important;
+    }
+
+    #mt-lp-ebook-guia-secreto-95bee7fc70bce7a08668 button:hover,
+    #mt-lp-ebook-guia-secreto-95bee7fc70bce7a08668 input[type="submit"]:hover,
+    #mt-lp-ebook-guia-secreto-95bee7fc70bce7a08668 .rd-button:hover,
+    #mt-lp-ebook-guia-secreto-95bee7fc70bce7a08668 .bricks-button:hover,
+    #mt-lp-ebook-guia-secreto-95bee7fc70bce7a08668 .bricks-form__submit-button:hover {
+      background: var(--acento-hover) !important;
+      transform: translateY(-2px) !important;
+      box-shadow: 0 12px 30px rgba(217, 52, 43, 0.5) !important;
+    }
+
+    .capture-footer-security {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-size: 11px;
+      color: var(--texto-suave);
+      margin-top: 18px;
+      letter-spacing: 0.05em;
+    }
+
+    /* ==========================================================================
+       ESTADO PÓS-CONVERSÃO (MENSAGEM DE SUCESSO + DOWNLOAD + QUIZ)
+       ========================================================================== */
+    .conversion-success-box {
+      display: none; /* Revelado dinamicamente após envio comprovado */
+      background: #181818;
+      border: 1px solid var(--acento);
+      padding: 34px 26px;
+      text-align: center;
+      animation: indacRise 0.5s ease-out forwards;
+    }
+
+    .success-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(217, 52, 43, 0.15);
+      border: 1px solid var(--acento);
+      color: var(--acento);
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .success-heading {
+      font-family: 'Anton', sans-serif;
+      font-size: 32px;
+      line-height: 1.05;
+      text-transform: uppercase;
+      color: var(--papel);
+      margin: 0 0 12px 0;
+    }
+
+    .success-text {
+      font-family: 'Merriweather', Georgia, serif;
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--texto-secundario);
+      margin: 0 0 24px 0;
+    }
+
+    .btn-download-ebook {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      width: 100%;
+      background: var(--acento);
+      color: var(--papel);
+      padding: 18px 24px;
+      border-radius: 999px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      box-shadow: 0 8px 24px rgba(217, 52, 43, 0.4);
+    }
+
+    .btn-download-ebook:hover {
+      background: var(--acento-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(217, 52, 43, 0.55);
+      color: var(--papel);
+    }
+
+    .email-alert-box {
+      margin-top: 20px;
+      padding: 14px 16px;
+      background: rgba(245, 241, 232, 0.04);
+      border: 1px solid var(--filete);
+      border-radius: 0;
+      font-size: 12px;
+      line-height: 1.6;
+      color: var(--texto-secundario);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      text-align: left;
+    }
+
+    .quiz-post-invite {
+      margin-top: 28px;
+      padding-top: 24px;
+      border-top: 1px solid var(--filete);
+    }
+
+    .quiz-post-invite h4 {
+      font-family: 'Anton', sans-serif;
+      font-size: 18px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin: 0 0 8px 0;
+      color: var(--papel);
+    }
+
+    .quiz-post-invite p {
+      font-size: 12px;
+      color: var(--texto-secundario);
+      margin: 0 0 16px 0;
+      line-height: 1.5;
+    }
+
+    .btn-quiz-mini {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      background: transparent;
+      border: 1px solid var(--papel);
+      color: var(--papel);
+      padding: 14px 20px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .btn-quiz-mini:hover {
+      background: var(--papel);
+      color: var(--ink);
+    }
+
+    /* ==========================================================================
+       SEÇÃO 01: O QUE VOCÊ VAI ENCONTRAR NO EBOOK
+       ========================================================================== */
+    .content-section {
+      padding: 80px 0;
+      border-bottom: 1px solid var(--filete);
+      position: relative;
+    }
+
+    .section-eyebrow {
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+      margin-bottom: 12px;
+    }
+
+    .section-num {
+      font-family: 'Anton', sans-serif;
+      font-size: 14px;
+      color: var(--acento);
+      letter-spacing: 0.1em;
+    }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      margin: 0;
+      color: var(--papel);
+    }
+
+    .section-headline {
+      font-family: 'Anton', sans-serif;
+      font-size: clamp(32px, 4vw, 54px);
+      line-height: 0.95;
+      text-transform: uppercase;
+      letter-spacing: -0.005em;
+      margin: 0 0 18px 0;
+      max-width: 18ch;
+    }
+
+    .section-headline span {
+      color: var(--acento);
+    }
+
+    .section-lead {
+      font-family: 'Merriweather', Georgia, serif;
+      font-size: 17px;
+      line-height: 1.65;
+      color: var(--texto-secundario);
+      max-width: 62ch;
+      margin: 0 0 54px 0;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+      gap: 24px;
+    }
+
+    .content-card {
+      background: var(--ink-suave);
+      border: 1px solid var(--filete);
+      padding: 32px 28px;
+      position: relative;
+      transition: all 0.25s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .content-card:hover {
+      border-color: var(--acento);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4);
+    }
+
+    .card-top-tag {
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--acento);
+      margin-bottom: 12px;
+    }
+
+    .card-title {
+      font-family: 'Anton', sans-serif;
+      font-size: 26px;
+      line-height: 1.05;
+      text-transform: uppercase;
+      margin: 0 0 14px 0;
+      color: var(--papel);
+    }
+
+    .card-text {
+      font-size: 14px;
+      line-height: 1.65;
+      color: var(--texto-secundario);
+      margin: 0;
+      flex-grow: 1;
+    }
+
+    /* ==========================================================================
+       SEÇÃO 02: RESPIRO CREME (EDITORIAL / MANIFESTO)
+       ========================================================================== */
+    .respiro-section {
+      background: var(--papel);
+      color: var(--ink);
+      padding: 84px 0;
+      position: relative;
+    }
+
+    .respiro-section .section-label {
+      color: var(--ink);
+    }
+
+    .respiro-quote {
+      font-family: 'Merriweather', Georgia, serif;
+      font-size: clamp(24px, 3.2vw, 38px);
+      font-weight: 700;
+      line-height: 1.35;
+      margin: 20px 0 24px 0;
+      color: var(--ink);
+      max-width: 26ch;
+    }
+
+    .respiro-text {
+      font-size: 16px;
+      line-height: 1.7;
+      color: rgba(20, 20, 20, 0.78);
+      max-width: 64ch;
+      margin: 0 0 44px 0;
+    }
+
+    .respiro-pillars {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+      gap: 28px;
+      border-top: 2px solid var(--ink);
+      padding-top: 36px;
+    }
+
+    .pillar-item h3 {
+      font-family: 'Anton', sans-serif;
+      font-size: 22px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin: 0 0 10px 0;
+      color: var(--ink);
+    }
+
+    .pillar-item p {
+      font-size: 14px;
+      line-height: 1.65;
+      color: rgba(20, 20, 20, 0.7);
+      margin: 0;
+    }
+
+    /* ==========================================================================
+       SEÇÃO 03: OUTROS CAMINHOS NO INDAC (IMERSÃO, VISITA, CONVERSA)
+       ========================================================================== */
+    .pathways-section {
+      padding: 84px 0;
+      border-bottom: 1px solid var(--filete);
+      position: relative;
+    }
+
+    .pathways-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+      gap: 28px;
+    }
+
+    .pathway-card {
+      background: var(--ink-suave);
+      border: 1px solid var(--filete);
+      padding: 36px 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.25s ease;
+      position: relative;
+    }
+
+    .pathway-card:hover {
+      border-color: var(--acento);
+      transform: translateY(-4px);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+    }
+
+    .pathway-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--acento);
+      margin-bottom: 16px;
+    }
+
+    .pathway-title {
+      font-family: 'Anton', sans-serif;
+      font-size: 28px;
+      line-height: 1.05;
+      text-transform: uppercase;
+      color: var(--papel);
+      margin: 0 0 14px 0;
+    }
+
+    .pathway-desc {
+      font-size: 14px;
+      line-height: 1.65;
+      color: var(--texto-secundario);
+      margin: 0 0 28px 0;
+      flex-grow: 1;
+    }
+
+    .btn-pathway {
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      background: transparent;
+      border: 1px solid var(--filete-forte);
+      color: var(--papel);
+      padding: 14px 20px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .btn-pathway:hover {
+      background: var(--acento);
+      border-color: var(--acento);
+      color: var(--papel);
+    }
+
+    .btn-pathway svg {
+      transition: transform 0.2s ease;
+    }
+
+    .btn-pathway:hover svg {
+      transform: translateX(4px);
+    }
+
+    /* ==========================================================================
+       SEÇÃO 04: ÚLTIMA SESSÃO DA LP - DESTAQUE PARA O QUIZ
+       ========================================================================== */
+    .quiz-feature-section {
+      padding: 96px 0;
+      border-bottom: 1px solid var(--filete);
+      position: relative;
+      overflow: hidden;
+      background: #111111;
+    }
+
+    .quiz-feature-bg-arcs {
+      position: absolute;
+      right: -5%;
+      bottom: -20%;
+      width: min(52%, 460px);
+      opacity: 0.35;
+      pointer-events: none;
+    }
+
+    .quiz-feature-box {
+      max-width: 820px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .quiz-feature-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid var(--filete-forte);
+      padding: 8px 18px;
+      border-radius: 999px;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--texto-secundario);
+      margin-bottom: 22px;
+      background: rgba(245, 241, 232, 0.04);
+    }
+
+    .quiz-feature-pill span {
+      width: 6px;
+      height: 6px;
+      background: var(--acento);
+      border-radius: 999px;
+    }
+
+    .quiz-feature-headline {
+      font-family: 'Anton', sans-serif;
+      font-weight: 400;
+      font-size: clamp(38px, 6vw, 76px);
+      line-height: 0.92;
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+      margin: 0 0 24px 0;
+      color: var(--papel);
+    }
+
+    .quiz-feature-headline span {
+      color: var(--acento);
+    }
+
+    .quiz-feature-desc {
+      font-family: 'Merriweather', Georgia, serif;
+      font-size: clamp(17px, 1.8vw, 20px);
+      line-height: 1.65;
+      color: var(--texto-secundario);
+      margin: 0 0 36px 0;
+      max-width: 58ch;
+    }
+
+    .quiz-benefits-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+
+    .quiz-benefit-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--papel);
+    }
+
+    .quiz-benefit-icon {
+      width: 22px;
+      height: 22px;
+      border-radius: 999px;
+      background: rgba(217, 52, 43, 0.18);
+      color: var(--acento);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      flex-shrink: 0;
+    }
+
+    .btn-quiz-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      background: var(--acento);
+      color: var(--papel);
+      padding: 18px 38px;
+      border-radius: 999px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all 0.22s ease;
+      box-shadow: 0 10px 30px rgba(217, 52, 43, 0.4);
+    }
+
+    .btn-quiz-cta:hover {
+      background: var(--acento-hover);
+      transform: translateY(-3px);
+      box-shadow: 0 14px 38px rgba(217, 52, 43, 0.6);
+      color: var(--papel);
+    }
+
+    /* ==========================================================================
+       RODAPÉ OFICIAL INDAC
+       ========================================================================== */
+    .indac-footer {
+      border-top: 1px solid var(--filete);
+      background: #0d0d0d;
+      padding: 64px 0 40px;
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 48px;
+    }
+
+    .footer-brand {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .footer-brand p {
+      font-size: 13px;
+      line-height: 1.65;
+      color: var(--texto-secundario);
+      max-width: 38ch;
+      margin: 0;
+    }
+
+    .footer-col-title {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--papel);
+      margin: 0 0 18px 0;
+    }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-links li a {
+      color: var(--texto-secundario);
+      text-decoration: none;
+      font-size: 13px;
+      transition: color 0.2s ease;
+    }
+
+    .footer-links li a:hover {
+      color: var(--acento);
+    }
+
+    .footer-address {
+      font-size: 13px;
+      line-height: 1.65;
+      color: var(--texto-secundario);
+    }
+
+    .footer-address a {
+      color: var(--papel);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .footer-address a:hover {
+      color: var(--acento);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--filete);
+      padding-top: 32px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      font-size: 12px;
+      color: var(--texto-suave);
+    }
+
+    /* ==========================================================================
+       BARRA FIXA MOBILE (ESTRITAMENTE MOBILE)
+       ========================================================================== */
+    .mobile-sticky-bar {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 45;
+      background: rgba(20, 20, 20, 0.95);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-top: 1px solid var(--filete);
+      padding: 12px 18px;
+    }
+
+    .mobile-sticky-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      background: var(--acento);
+      color: var(--papel);
+      padding: 14px 20px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      box-shadow: 0 6px 20px rgba(217, 52, 43, 0.4);
+    }
+
+    /* ==========================================================================
+       RESPONSIVIDADE (MOBILE & TABLET)
+       ========================================================================== */
+    @media (max-width: 991px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .footer-top {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .hero-section {
+        padding: 40px 0 60px;
+      }
+      .content-section, .respiro-section, .pathways-section, .quiz-feature-section {
+        padding: 60px 0;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .indac-logo-sub {
+        display: none;
+      }
+      .capture-card-frame {
+        padding: 26px 20px;
+      }
+      /* Barra móvel apenas em telas <= 767px quando ativada pela classe */
+      .mobile-sticky-bar.is-visible {
+        display: block;
+      }
+      .hero-title {
+        font-size: 34px;
+      }
+      .respiro-quote {
+        font-size: 24px;
+      }
+      .quiz-feature-headline {
+        font-size: 34px;
+      }
+      .btn-quiz-cta {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="indac-wrapper">
+
+  <!-- ==========================================================================
+       HEADER OFICIAL INDAC
+       ========================================================================== -->
+  <header class="indac-header">
+    <div class="indac-header-inner">
+      <a href="https://lp.indacescoladeatores.com.br" class="indac-logo-group" target="_blank" rel="noopener">
+        <div class="indac-logo-pill"></div>
+        <div class="indac-logo-text">INDAC</div>
+        <div class="indac-logo-sub">Escola de Atores</div>
+      </a>
+      
+      <div class="indac-header-actions">
+        <a href="https://wa.me/5511996160533?text=Ol%C3%A1!%20Quero%20saber%20mais%20sobre%20os%20cursos%20do%20INDAC" target="_blank" rel="noopener" class="btn-header-zap">
+          <!-- SVG WhatsApp Ícone Oficial -->
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--verde-zap);">
+            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+          </svg>
+          <span>Atendimento</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       HERO SECTION: CAPTURA DO EBOOK
+       ========================================================================== -->
+  <section class="hero-section" id="hero-captura">
+    <!-- Grafismo de Raios Teatrais (SVG Puro) -->
+    <div class="hero-bg-rays">
+      <svg viewBox="0 0 200 200" fill="none" style="width:100%;display:block">
+        <g stroke="#d9342b" stroke-width="1.2">
+          <line x1="100" y1="100" x2="100" y2="6"></line>
+          <line x1="100" y1="100" x2="124" y2="9"></line>
+          <line x1="100" y1="100" x2="147" y2="20"></line>
+          <line x1="100" y1="100" x2="166" y2="39"></line>
+          <line x1="100" y1="100" x2="180" y2="63"></line>
+          <line x1="100" y1="100" x2="191" y2="88"></line>
+          <line x1="100" y1="100" x2="194" y2="112"></line>
+          <line x1="100" y1="100" x2="186" y2="139"></line>
+          <line x1="100" y1="100" x2="168" y2="162"></line>
+          <line x1="100" y1="100" x2="143" y2="182"></line>
+          <line x1="100" y1="100" x2="118" y2="192"></line>
+          <line x1="100" y1="100" x2="100" y2="194"></line>
+        </g>
+      </svg>
+    </div>
+
+    <div class="indac-container">
+      <div class="hero-grid">
+        
+        <!-- Coluna da Esquerda: Copy + Imagem Mockup -->
+        <div class="hero-copy-col">
+          <div class="hero-badge">
+            <span class="hero-badge-dot"></span>
+            <span>Ebook Gratuito · INDAC 2026</span>
+          </div>
+
+          <h1 class="hero-title">
+            O Guia (Não Tão) <span>Secreto</span> Para Se Tornar Ator
+          </h1>
+
+          <p class="hero-subtitle">
+            Tudo o que não te contam, mas que muda tudo. Sua jornada autêntica do zero ao DRT.
+          </p>
+
+          <p class="hero-desc">
+            Esqueça fórmulas mágicas e atalhos ilusórios. Em mais de 50 anos de história formando atores nos palcos de São Paulo, o INDAC preparou este guia com tudo o que a profissão realmente exige: técnica, preparação corporal, leitura cênica, audições e os caminhos legais para obter o seu registro profissional.
+          </p>
+
+          <!-- Imagem Mockup Oficial Especificada -->
+          <div class="hero-media-wrap">
+            <img 
+              id="hero-mockup-img"
+              src="https://email-editor-production.s3.amazonaws.com/images/811533/Ebook/Book_and_smartphone_displaying_d%E2%80%A6_2K_20260923191228.jpeg" 
+              alt="O Guia (Não Tão) Secreto Para Se Tornar Ator - Edição INDAC"
+              loading="eager"
+              onerror="this.onerror=null; this.src='Book_and_smartphone_displaying_d\u2026_2K_20260923191228.jpeg';"
+            >
+            <div class="hero-media-caption">
+              <span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#d9342b" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                  <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                </svg>
+                PDF Master Digital
+              </span>
+              <span>Download Imediato</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Coluna da Direita: Card de Captura do RD Station -->
+        <div class="hero-form-col">
+          <div class="capture-card-frame" id="card-captura">
+            
+            <div class="capture-header" id="card-header-captura">
+              <span class="capture-tag">Acesso Exclusivo e Imediato</span>
+              <h2 class="capture-title">Baixe o Guia Agora</h2>
+              <p class="capture-subtitle">Informe seus dados para receber o arquivo do ebook e começar sua leitura hoje mesmo:</p>
+            </div>
+
+            <!-- CONTAINER NATIVO RD STATION MARKETING -->
+            <div class="rd-form-wrapper" id="container-form-rd">
+              
+              <!-- Skeleton Loader visual enquanto o script carrega -->
+              <div class="rd-form-skeleton" id="rd-form-skeleton">
+                <div class="skeleton-item skeleton-label"></div>
+                <div class="skeleton-item skeleton-input"></div>
+                <div class="skeleton-item skeleton-label" style="width: 50%;"></div>
+                <div class="skeleton-item skeleton-input"></div>
+                <div class="skeleton-item skeleton-label" style="width: 35%;"></div>
+                <div class="skeleton-item skeleton-input"></div>
+                <div class="skeleton-item skeleton-btn"></div>
+              </div>
+
+              <!-- DIV OFICIAL DO FORMULÁRIO DO RD STATION -->
+              <div role="main" id="mt-lp-ebook-guia-secreto-95bee7fc70bce7a08668"></div>
+              
+              <script type="text/javascript" src="https://d335luupugsy2.cloudfront.net/js/rdstation-forms/stable/rdstation-forms.min.js"></script>
+              <script type="text/javascript">
+                (function() {
+                  function initRDStationForm() {
+                    if (typeof RDStationForms !== 'undefined') {
+                      try {
+                        new RDStationForms('mt-lp-ebook-guia-secreto-95bee7fc70bce7a08668', 'null').createForm();
+                      } catch(e) {
+                        console.warn("RDStationForms createForm error:", e);
+                      }
+                    } else {
+                      var attempts = 0;
+                      var pollTimer = setInterval(function() {
+                        attempts++;
+                        if (typeof RDStationForms !== 'undefined') {
+                          clearInterval(pollTimer);
+                          try {
+                            new RDStationForms('mt-lp-ebook-guia-secreto-95bee7fc70bce7a08668', 'null').createForm();
+                          } catch(e) {
+                            console.warn("RDStationForms delayed createForm error:", e);
+                          }
+                        } else if (attempts > 60) {
+                          clearInterval(pollTimer);
+                        }
+                      }, 100);
+                    }
+                  }
+                  initRDStationForm();
+                })();
+              </script>
+            </div>
+
+            <!-- BLOCO PÓS-CONVERSÃO (ATIVADO AUTOMATICAMENTE APÓS CONFIRMAÇÃO DO ENVIO) -->
+            <div class="conversion-success-box" id="bloco-pos-conversao">
+              <div class="success-badge">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                Inscrição Confirmada!
+              </div>
+
+              <h3 class="success-heading">Seu Ebook Está Pronto</h3>
+              <p class="success-text">
+                Clique no botão abaixo para iniciar o download direto do seu arquivo <strong>PDF Master</strong>:
+              </p>
+
+              <!-- Botão Oficial de Download -->
+              <a href="Ebook_Guia_Secreto_Ator_Indac_Master.pdf" download="Ebook_Guia_Secreto_Ator_Indac_Master.pdf" target="_blank" rel="noopener noreferrer" class="btn-download-ebook" id="btn-download-pdf">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="7 10 12 15 17 10"></polyline>
+                  <line x1="12" y1="15" x2="12" y2="3"></line>
+                </svg>
+                Baixar Ebook Agora (PDF)
+              </a>
+
+              <!-- Aviso de Envio por E-mail -->
+              <div class="email-alert-box">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d9342b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0; margin-top:1px;">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                <span>
+                  <strong>Enviamos uma cópia para o seu e-mail!</strong><br>
+                  Caso queira ler mais tarde, o link do ebook já foi encaminhado para a sua caixa de entrada para você baixar quando e onde quiser.
+                </span>
+              </div>
+
+              <!-- Reforço do convite para o Quiz pós-conversão -->
+              <div class="quiz-post-invite">
+                <h4>Descubra Seu Perfil Artístico</h4>
+                <p>Enquanto o download é concluído, faça nosso teste rápido de 2 minutos e saiba qual caminho cênico mais combina com você:</p>
+                <a href="https://lp.indacescoladeatores.com.br/quiz-perfil-artisticov1" target="_blank" rel="noopener" class="btn-quiz-mini">
+                  <span>Responder ao Quiz Agora</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+            <!-- Rodapé de Privacidade -->
+            <div class="capture-footer-security">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+              <span>Ambiente seguro. Seus dados estão protegidos com o INDAC.</span>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SEÇÃO 01: O QUE VOCÊ VAI DESCOBRIR NO GUIA
+       ========================================================================== -->
+  <section class="content-section" id="conteudo-ebook">
+    <div class="indac-container">
+      <div class="section-eyebrow">
+        <span class="section-num">01</span>
+        <h2 class="section-label">Conteúdo Estratégico</h2>
+      </div>
+
+      <h2 class="section-headline">
+        O Que Não Te Contam, Mas Que <span>Muda Tudo</span>
+      </h2>
+
+      <p class="section-lead">
+        Este guia foi estruturado para quem busca a verdade sobre a profissão do ator. Sem romantização e sem atalhos: apenas a experiência prática de quem atua e ensina no mais alto nível há 50 anos.
+      </p>
+
+      <div class="content-grid">
+        
+        <!-- Card 1: DRT -->
+        <article class="content-card">
+          <span class="card-top-tag">Pilar Jurídico & Carreira</span>
+          <h3 class="card-title">A Verdade Sobre o DRT</h3>
+          <p class="card-text">
+            Entenda detalhadamente o que é o registro profissional de ator no Brasil, quais são as exigências legais do SATED e como evitar cursos que prometem registros sem validade jurídica.
+          </p>
+        </article>
+
+        <!-- Card 2: Preparação Técnica -->
+        <article class="content-card">
+          <span class="card-top-tag">Ofício do Ator</span>
+          <h3 class="card-title">Voz, Corpo e Palco</h3>
+          <p class="card-text">
+            O trabalho do ator começa muito antes do texto decorado. Conheça a rotina real de preparação cênica: respiração, dicção, presença e a construção da verdade em cena.
+          </p>
+        </article>
+
+        <!-- Card 3: Audições e Mercado -->
+        <article class="content-card">
+          <span class="card-top-tag">Mercado de Trabalho</span>
+          <h3 class="card-title">Audições e Castings</h3>
+          <p class="card-text">
+            Como funcionam as seleções de elenco para teatro, cinema, streaming e publicidade. Dicas práticas de postura, autotape profissional e criação de repertório artístico.
+          </p>
+        </article>
+
+        <!-- Card 4: Pedagogia INDAC -->
+        <article class="content-card">
+          <span class="card-top-tag">Meio Século de Tradição</span>
+          <h3 class="card-title">Autonomia Cênica</h3>
+          <p class="card-text">
+            Por que atores formados no INDAC se destacam: o foco no ator-criador, capaz de pensar o espetáculo, propor soluções e atuar com autoridade técnica em qualquer mídia.
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SEÇÃO 02: RESPIRO CREME (EDITORIAL & MANIFESTO)
+       ========================================================================== -->
+  <section class="respiro-section">
+    <div class="indac-container">
+      <div class="section-eyebrow">
+        <span class="section-num">02</span>
+        <h2 class="section-label">Manifesto Cênico</h2>
+      </div>
+
+      <div class="respiro-quote">
+        “O palco não aceita mentira. Quando a luz acende, só existe a verdade da sua presença.”
+      </div>
+
+      <p class="respiro-text">
+        Há meio século, o INDAC preserva a essência do teatro como arte viva e transformadora. Em um mercado inundado por fórmulas de visibilidade rápida, formamos atores consistentes, preparados para a longevidade da carreira artística.
+      </p>
+
+      <div class="respiro-pillars">
+        <div class="pillar-item">
+          <h3>Palco Antes de Tudo</h3>
+          <p>O teatro é a caixa cênica onde tudo acontece. Quem aprende a sustentar uma cena no palco domina as câmeras com naturalidade e profundidade.</p>
+        </div>
+
+        <div class="pillar-item">
+          <h3>Gesto, Não Decoração</h3>
+          <p>A expressão autêntica não vem de gestos vazios, mas da intenção clara, da respiração consciente e da escuta generosa do colega de cena.</p>
+        </div>
+
+        <div class="pillar-item">
+          <h3>Formação Profissionalizante</h3>
+          <p>Do primeiro contato nos cursos livres ao aprofundamento rigoroso com emissão do DRT profissional, guiamos cada aluno com seriedade artística.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SEÇÃO 03: OUTROS CAMINHOS NO INDAC (LINKS ESPECIFICADOS)
+       ========================================================================== -->
+  <section class="pathways-section" id="caminhos-indac">
+    <div class="indac-container">
+      <div class="section-eyebrow">
+        <span class="section-num">03</span>
+        <h2 class="section-label">Viva a Experiência</h2>
+      </div>
+
+      <h2 class="section-headline">
+        Conheça Outros <span>Caminhos</span> no INDAC
+      </h2>
+
+      <p class="section-lead">
+        A leitura do guia é apenas o primeiro passo. Conheça as oportunidades práticas para vivenciar o teatro de perto com nossa equipe e nossos professores:
+      </p>
+
+      <div class="pathways-grid">
+        
+        <!-- Card 1: Imersão Cênica -->
+        <div class="pathway-card">
+          <div>
+            <span class="pathway-badge">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polygon points="10 8 16 12 10 16 10 8"></polygon>
+              </svg>
+              Workshop Intensivo
+            </span>
+            <h3 class="pathway-title">Imersão Cênica</h3>
+            <p class="pathway-desc">
+              Uma vivência presencial intensa nos palcos do INDAC. Experimente a interpretação, o jogo dramático e o improviso antes de iniciar sua formação regular.
+            </p>
+          </div>
+          <a href="https://lp.indacescoladeatores.com.br/imersao-cenica" target="_blank" rel="noopener" class="btn-pathway">
+            <span>Conhecer a Imersão</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Card 2: Visite o INDAC -->
+        <div class="pathway-card">
+          <div>
+            <span class="pathway-badge">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              Portas Abertas
+            </span>
+            <h3 class="pathway-title">Visite o INDAC</h3>
+            <p class="pathway-desc">
+              Venha conhecer nosso casarão histórico na Barra Funda (Rua Clélia, 658), nossas salas de ensaio, teatros e acervo. Sinta a atmosfera do nosso espaço criativo.
+            </p>
+          </div>
+          <a href="https://lp.indacescoladeatores.com.br/visiteoindac" target="_blank" rel="noopener" class="btn-pathway">
+            <span>Agendar Minha Visita</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Card 3: Agendar Conversa -->
+        <div class="pathway-card">
+          <div>
+            <span class="pathway-badge">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+              </svg>
+              Orientação Individual
+            </span>
+            <h3 class="pathway-title">Agendar Conversa</h3>
+            <p class="pathway-desc">
+              Tire todas as suas dúvidas sobre currículo, horários, processos de DRT e investimento diretamente com nossa coordenação pedagógica.
+            </p>
+          </div>
+          <a href="https://lp.indacescoladeatores.com.br/agendar-conversa-v1" target="_blank" rel="noopener" class="btn-pathway">
+            <span>Falar com a Equipe</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       SEÇÃO 04: ÚLTIMA SESSÃO - CONVITE PARA O QUIZ (EXPLICITAMENTE REQUISITADO)
+       ========================================================================== -->
+  <section class="quiz-feature-section" id="secao-quiz">
+    <!-- Grafismo de Arcos Aninhados SVG Puro Oficial INDAC -->
+    <div class="quiz-feature-bg-arcs">
+      <svg viewBox="0 0 200 200" fill="none" stroke="#d9342b" style="width:100%;display:block">
+        <path d="M4 200 V96 A96 78 0 0 1 196 96 V200" stroke-width="1"></path>
+        <path d="M36 200 V100 A64 54 0 0 1 164 100 V200" stroke-width="2"></path>
+        <path d="M68 200 V104 A32 30 0 0 1 132 104 V200" stroke-width="4"></path>
+      </svg>
+    </div>
+
+    <div class="indac-container">
+      <div class="quiz-feature-box">
+        
+        <div class="quiz-feature-pill">
+          <span></span>
+          <span>Teste Gratuito · 2 Minutos · Resultado Imediato</span>
+        </div>
+
+        <h2 class="quiz-feature-headline">
+          Qual é o seu <span>Perfil Artístico</span>?
+        </h2>
+
+        <p class="quiz-feature-desc">
+          Onde você está hoje na sua relação com o teatro e qual é o próximo passo mais inteligente para sua evolução? Responda ao nosso questionário interativo e receba uma orientação personalizada para o seu momento.
+        </p>
+
+        <div class="quiz-benefits-row">
+          <div class="quiz-benefit-item">
+            <span class="quiz-benefit-icon">✓</span>
+            <span>8 perguntas objetivas</span>
+          </div>
+          <div class="quiz-benefit-item">
+            <span class="quiz-benefit-icon">✓</span>
+            <span>Diagnóstico do seu momento</span>
+          </div>
+          <div class="quiz-benefit-item">
+            <span class="quiz-benefit-icon">✓</span>
+            <span>Recomendação de curso ideal</span>
+          </div>
+        </div>
+
+        <!-- Botão Principal do Quiz com link oficial solicitado -->
+        <a href="https://lp.indacescoladeatores.com.br/quiz-perfil-artisticov1" target="_blank" rel="noopener" class="btn-quiz-cta">
+          <span>Fazer o Quiz de Perfil Artístico Agora</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       RODAPÉ OFICIAL INDAC
+       ========================================================================== -->
+  <footer class="indac-footer">
+    <div class="indac-container">
+      
+      <div class="footer-top">
+        <!-- Coluna da Marca -->
+        <div class="footer-brand">
+          <div class="indac-logo-group">
+            <div class="indac-logo-pill"></div>
+            <div class="indac-logo-text">INDAC</div>
+            <div class="indac-logo-sub">Escola de Atores</div>
+          </div>
+          <p>
+            Formando atores profissionais, livres e pensadores da cena teatral há mais de 50 anos em São Paulo.
+          </p>
+        </div>
+
+        <!-- Coluna de Navegação -->
+        <div>
+          <h4 class="footer-col-title">Navegação Rápida</h4>
+          <ul class="footer-links">
+            <li><a href="#hero-captura">Baixar Ebook</a></li>
+            <li><a href="https://lp.indacescoladeatores.com.br/quiz-perfil-artisticov1" target="_blank" rel="noopener">Quiz de Perfil Artístico</a></li>
+            <li><a href="https://lp.indacescoladeatores.com.br/imersao-cenica" target="_blank" rel="noopener">Imersão Cênica</a></li>
+            <li><a href="https://lp.indacescoladeatores.com.br/visiteoindac" target="_blank" rel="noopener">Visite o INDAC</a></li>
+            <li><a href="https://lp.indacescoladeatores.com.br/agendar-conversa-v1" target="_blank" rel="noopener">Agendar Conversa</a></li>
+          </ul>
+        </div>
+
+        <!-- Coluna de Localização -->
+        <div>
+          <h4 class="footer-col-title">Sede Histórica</h4>
+          <div class="footer-address">
+            <strong>INDAC Escola de Atores</strong><br>
+            Rua Clélia, 658 — Barra Funda<br>
+            São Paulo - SP, CEP 05042-000<br><br>
+            WhatsApp / Atendimento: 
+            <a href="https://wa.me/5511996160533?text=Ol%C3%A1!%20Gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20o%20INDAC" target="_blank" rel="noopener">
+              (11) 99616-0533
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; <span id="current-year">2026</span> INDAC - Instituto de Arte e Ciência. Todos os direitos reservados.
+        </div>
+        <div>
+          Identidade Visual Oficial · Palco, Vermelho e Creme
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       BARRA FIXA INFERIOR PARA MOBILE (ESTRITAMENTE VISÍVEL EM SMARTPHONES)
+       ========================================================================== -->
+  <div class="mobile-sticky-bar" id="mobile-bar">
+    <a href="#card-captura" class="mobile-sticky-btn" id="mobile-sticky-action">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+        <polyline points="7 10 12 15 17 10"></polyline>
+        <line x1="12" y1="15" x2="12" y2="3"></line>
+      </svg>
+      <span id="mobile-btn-text">Baixar Ebook Gratuito</span>
+    </a>
+  </div>
+
+</div>
+
+<!-- ==========================================================================
+     SCRIPTS: CONTROLE PÓS-CONVERSÃO, DETECÇÃO RD STATION & RESILIÊNCIA
+     ========================================================================== -->
+<script>
+  (function() {
+    // 0. Configurações editáveis
+    var PDF_DOWNLOAD_HREF = "Ebook_Guia_Secreto_Ator_Indac_Master.pdf";
+
+    // 1. Atualização dinâmica do ano no rodapé
+    var yearEl = document.getElementById('current-year');
+    if (yearEl) {
+      yearEl.textContent = new Date().getFullYear();
+    }
+
+    // 2. Elementos de controle da conversão
+    var formSkeleton = document.getElementById('rd-form-skeleton');
+    var formContainer = document.getElementById('container-form-rd');
+    var formTargetDiv = document.getElementById('mt-lp-ebook-guia-secreto-95bee7fc70bce7a08668');
+    var cardHeader = document.getElementById('card-header-captura');
+    var successBox = document.getElementById('bloco-pos-conversao');
+    var cardCaptura = document.getElementById('card-captura');
+    var mobileStickyBtn = document.getElementById('mobile-sticky-action');
+    var mobileBtnText = document.getElementById('mobile-btn-text');
+    var isConverted = false;
+    var submissionInitiated = false;
+
+    // Oculta o skeleton assim que os campos do RD Station são inseridos
+    function checkFormRendered() {
+      if (formTargetDiv && formTargetDiv.children.length > 0 && formSkeleton) {
+        formSkeleton.classList.add('is-hidden');
+      }
+    }
+
+    // Função central para acionar o estado de sucesso
+    function triggerConversionSuccess() {
+      if (isConverted) return;
+      isConverted = true;
+
+      // Oculta o cabeçalho de preenchimento e o contêiner do formulário
+      if (cardHeader) {
+        cardHeader.style.display = 'none';
+      }
+      if (formContainer) {
+        formContainer.style.display = 'none';
+      }
+
+      // Exibe o card de pós-conversão
+      if (successBox) {
+        successBox.style.display = 'block';
+      }
+
+      // Atualiza o botão fixo mobile para levar ao arquivo ou ao Quiz
+      if (mobileBtnText) {
+        mobileBtnText.textContent = 'Baixar Ebook (PDF)';
+      }
+      if (mobileStickyBtn) {
+        mobileStickyBtn.href = '#bloco-pos-conversao';
+      }
+
+      // Rola suavemente até o card para visualização imediata
+      if (cardCaptura) {
+        cardCaptura.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+
+      // Salva estado na sessão
+      try {
+        sessionStorage.setItem('indac_ebook_converted', 'true');
+      } catch(e) {}
+    }
+
+    // Verifica se já havia convertido nesta sessão
+    try {
+      if (sessionStorage.getItem('indac_ebook_converted') === 'true') {
+        triggerConversionSuccess();
+      }
+    } catch(e) {}
+
+    // ESTRATÉGIA A: Monitoramento nativo de XMLHttpRequest (Intercepta resposta do RD Station)
+    try {
+      var origOpen = XMLHttpRequest.prototype.open;
+      var origSend = XMLHttpRequest.prototype.send;
+      XMLHttpRequest.prototype.open = function(method, url) {
+        this._reqUrl = url || '';
+        this._reqMethod = method || '';
+        return origOpen.apply(this, arguments);
+      };
+      XMLHttpRequest.prototype.send = function() {
+        this.addEventListener('load', function() {
+          var url = this._reqUrl || '';
+          if (
+            (url.indexOf('rdstation') !== -1 ||
+             url.indexOf('rd.services') !== -1 ||
+             url.indexOf('conversions') !== -1 ||
+             url.indexOf('cloudfront.net') !== -1) &&
+            this.status >= 200 && this.status < 300
+          ) {
+            triggerConversionSuccess();
+          }
+        });
+        return origSend.apply(this, arguments);
+      };
+    } catch(err) {}
+
+    // ESTRATÉGIA B: Monitoramento de window.fetch
+    if (window.fetch) {
+      var origFetch = window.fetch;
+      window.fetch = function(resource, init) {
+        var url = typeof resource === 'string' ? resource : (resource && resource.url ? resource.url : '');
+        return origFetch.apply(this, arguments).then(function(response) {
+          if (
+            (url.indexOf('rdstation') !== -1 ||
+             url.indexOf('rd.services') !== -1 ||
+             url.indexOf('conversions') !== -1) &&
+            response && response.ok
+          ) {
+            triggerConversionSuccess();
+          }
+          return response;
+        });
+      };
+    }
+
+    // ESTRATÉGIA C: MutationObserver no formulário do RD Station
+    if (formTargetDiv && window.MutationObserver) {
+      var observer = new MutationObserver(function() {
+        checkFormRendered();
+
+        // Só verifica mensagens de sucesso após tentativa de submissão do lead
+        if (submissionInitiated) {
+          var successEl = formTargetDiv.querySelector('.rd-form-success, .bricks-form__success, .submitted');
+          if (successEl) {
+            triggerConversionSuccess();
+            observer.disconnect();
+            return;
+          }
+
+          var formEl = formTargetDiv.querySelector('form');
+          if (formEl && (formEl.style.display === 'none' || formEl.classList.contains('is-hidden'))) {
+            triggerConversionSuccess();
+            observer.disconnect();
+            return;
+          }
+
+          var text = (formTargetDiv.innerText || formTargetDiv.textContent || '').toLowerCase();
+          var hasErrors = formTargetDiv.querySelector('.error, .bricks-form__error, .with-errors') !== null;
+          if (!hasErrors && (text.indexOf('obrigado') !== -1 || text.indexOf('sucesso') !== -1 || text.indexOf('recebemos seus dados') !== -1)) {
+            triggerConversionSuccess();
+            observer.disconnect();
+          }
+        }
+      });
+      observer.observe(formTargetDiv, { childList: true, subtree: true, attributes: true });
+    }
+
+    // ESTRATÉGIA D: Listener do evento 'submit' com verificação de campos
+    document.addEventListener('submit', function(e) {
+      var target = e.target;
+      if (target && target.closest('#mt-lp-ebook-guia-secreto-95bee7fc70bce7a08668')) {
+        // Marca que uma submissão foi iniciada
+        submissionInitiated = true;
+
+        // Se o formulário não tiver erros após 3 segundos, aciona a transição como fallback seguro
+        setTimeout(function() {
+          var formNode = document.getElementById('mt-lp-ebook-guia-secreto-95bee7fc70bce7a08668');
+          var errorNode = formNode ? formNode.querySelector('.error, .bricks-form__error, .with-errors') : null;
+          if (!errorNode && !isConverted) {
+            triggerConversionSuccess();
+          }
+        }, 3200);
+      }
+    }, true);
+
+    // ESTRATÉGIA E: Listener de eventos personalizados e postMessage (iFrames e integrações externas)
+    window.addEventListener('message', function(event) {
+      if (event && event.data) {
+        var str = typeof event.data === 'string' ? event.data : JSON.stringify(event.data);
+        if (str.indexOf('conversion') !== -1 || str.indexOf('form-submitted') !== -1 || str.indexOf('rdstation') !== -1) {
+          triggerConversionSuccess();
+        }
+      }
+    });
+
+    ['rdstation:conversion', 'rdstation.form.success', 'rdstation-form-success'].forEach(function(evtName) {
+      document.addEventListener(evtName, function() {
+        triggerConversionSuccess();
+      });
+    });
+
+    // 3. Controle da barra móvel (Ativa apenas em telas <= 767px quando rolada para além do Hero)
+    var mobileBar = document.getElementById('mobile-bar');
+    var heroEl = document.getElementById('hero-captura');
+    if (mobileBar && heroEl) {
+      window.addEventListener('scroll', function() {
+        if (window.innerWidth <= 767) {
+          var heroBottom = heroEl.getBoundingClientRect().bottom;
+          if (heroBottom < 80) {
+            mobileBar.classList.add('is-visible');
+          } else {
+            mobileBar.classList.remove('is-visible');
+          }
+        } else {
+          mobileBar.classList.remove('is-visible');
+        }
+      }, { passive: true });
+    }
+
+    // Verificação inicial do render do formulário
+    setTimeout(checkFormRendered, 500);
+    setTimeout(checkFormRendered, 1500);
+  })();
+</script>
+
+</body>
+</html>

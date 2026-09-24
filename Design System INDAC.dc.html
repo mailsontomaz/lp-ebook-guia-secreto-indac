@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Merriweather:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  body { margin:0; background:#141414; color:#f5f1e8; font-family:'Montserrat',system-ui,sans-serif; -webkit-font-smoothing:antialiased; }
+  ::selection { background:#d9342b; color:#f5f1e8; }
+  a { color:#d9342b; text-decoration:none; }
+  a:hover { color:#f5f1e8; }
+  @keyframes indacRise { from { opacity:0; transform:translateY(14px); } to { opacity:1; transform:none; } }
+  @keyframes indacSpin { to { transform:rotate(360deg); } }
+</style>
+</helmet>
+
+<div style="background:#141414;color:#f5f1e8;min-height:100vh;overflow-x:hidden">
+
+  <div style="position:sticky;top:0;z-index:40;background:rgba(20,20,20,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(245,241,232,.12)">
+    <div style="max-width:1180px;margin:0 auto;padding:14px 24px;display:flex;align-items:center;gap:24px;flex-wrap:wrap">
+      <div style="display:flex;align-items:center;gap:12px">
+        <div style="width:14px;height:28px;background:#d9342b;border-radius:999px"></div>
+        <div style="font-family:'Anton',sans-serif;font-size:19px;letter-spacing:.04em;line-height:1">INDAC</div>
+        <div style="font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(245,241,232,.55);border-left:1px solid rgba(245,241,232,.2);padding-left:12px">Sistema de Design</div>
+      </div>
+      <div style="display:flex;gap:20px;flex-wrap:wrap;margin-left:auto;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase">
+        <a href="#cor" style="color:rgba(245,241,232,.6)">Cor</a>
+        <a href="#tipografia" style="color:rgba(245,241,232,.6)">Tipografia</a>
+        <a href="#grafismos" style="color:rgba(245,241,232,.6)">Grafismos</a>
+        <a href="#componentes" style="color:rgba(245,241,232,.6)">Componentes</a>
+        <a href="#aplicacao" style="color:rgba(245,241,232,.6)">Aplicação</a>
+      </div>
+    </div>
+  </div>
+
+  <section style="position:relative;max-width:1180px;margin:0 auto;padding:96px 24px 72px;overflow:hidden">
+    <div style="position:absolute;right:-60px;top:0;width:min(46vw,460px);opacity:.5;pointer-events:none">
+      <sc-if value="{{ heroRaios }}" hint-placeholder-val="{{ true }}">
+        <svg viewBox="0 0 200 200" style="width:100%;display:block;animation:indacSpin 120s linear infinite">
+          <g stroke="#d9342b" stroke-width="1.1">
+            <line x1="100" y1="100" x2="100" y2="6"></line><line x1="100" y1="100" x2="124" y2="9"></line><line x1="100" y1="100" x2="147" y2="20"></line><line x1="100" y1="100" x2="166" y2="39"></line><line x1="100" y1="100" x2="180" y2="63"></line><line x1="100" y1="100" x2="191" y2="88"></line><line x1="100" y1="100" x2="194" y2="112"></line><line x1="100" y1="100" x2="186" y2="139"></line><line x1="100" y1="100" x2="168" y2="162"></line><line x1="100" y1="100" x2="143" y2="182"></line><line x1="100" y1="100" x2="118" y2="192"></line><line x1="100" y1="100" x2="100" y2="194"></line><line x1="100" y1="100" x2="76" y2="191"></line><line x1="100" y1="100" x2="53" y2="180"></line><line x1="100" y1="100" x2="34" y2="161"></line><line x1="100" y1="100" x2="20" y2="137"></line><line x1="100" y1="100" x2="9" y2="112"></line><line x1="100" y1="100" x2="6" y2="88"></line><line x1="100" y1="100" x2="14" y2="61"></line><line x1="100" y1="100" x2="32" y2="38"></line><line x1="100" y1="100" x2="57" y2="18"></line><line x1="100" y1="100" x2="82" y2="8"></line>
+          </g>
+        </svg>
+      </sc-if>
+      <sc-if value="{{ heroArcos }}" hint-placeholder-val="{{ false }}">
+        <svg viewBox="0 0 200 200" style="width:100%;display:block">
+          <path d="M10 130 A90 66 0 0 1 190 130 Z" fill="#d9342b"></path>
+          <path d="M10 196 A90 66 0 0 1 190 196 Z" fill="#d9342b"></path>
+        </svg>
+      </sc-if>
+      <sc-if value="{{ heroOndas }}" hint-placeholder-val="{{ false }}">
+        <svg viewBox="0 0 200 200" fill="none" stroke="#d9342b" style="width:100%;display:block">
+          <path d="M6 190 V96 A62 62 0 0 1 130 96 V190" stroke-width="3"></path>
+          <path d="M34 190 V96 A34 34 0 0 1 102 96 V190" stroke-width="3"></path>
+          <path d="M62 190 V96 A6 6 0 0 1 74 96 V190" stroke-width="3"></path>
+        </svg>
+      </sc-if>
+    </div>
+
+    <div style="position:relative;display:inline-flex;align-items:center;gap:10px;padding:7px 14px;border:1px solid rgba(245,241,232,.22);border-radius:999px;font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(245,241,232,.7)">
+      <span style="width:6px;height:6px;background:#d9342b;border-radius:999px"></span>v1.0 · 2026
+    </div>
+    <h1 style="position:relative;font-family:'Anton',sans-serif;font-weight:400;font-size:clamp(48px,9vw,116px);line-height:.88;letter-spacing:-.005em;text-transform:uppercase;margin:26px 0 0;max-width:11ch">Sistema de <span style="color:#d9342b">design</span></h1>
+    <p style="position:relative;font-family:'Merriweather',Georgia,serif;font-size:clamp(17px,2vw,21px);line-height:1.6;color:rgba(245,241,232,.75);max-width:56ch;margin:28px 0 0;text-wrap:pretty">A linguagem visual do INDAC Escola de Atores. Preto de palco, vermelho de cortina, creme de refletor — e um repertório de grafismos que dá movimento a tudo o que a escola assina.</p>
+    <div style="position:relative;display:flex;flex-wrap:wrap;gap:12px;margin-top:36px">
+      <a href="#cor" style="display:inline-flex;align-items:center;gap:10px;background:#d9342b;color:#f5f1e8;padding:15px 28px;border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase" style-hover="background:#f5f1e8;color:#141414">Começar pelas cores</a>
+      <a href="#grafismos" style="display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(245,241,232,.3);color:#f5f1e8;padding:15px 28px;border-radius:999px;font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase" style-hover="border-color:#f5f1e8;background:rgba(245,241,232,.06)">Ver grafismos</a>
+    </div>
+
+    <div style="position:relative;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,190px),1fr));gap:1px;background:rgba(245,241,232,.14);border:1px solid rgba(245,241,232,.14);margin-top:72px">
+      <div style="background:#141414;padding:26px 22px">
+        <div style="font-family:'Anton',sans-serif;font-size:38px;color:#d9342b;line-height:1">50</div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(245,241,232,.6);margin-top:8px">Anos de tradição</div>
+      </div>
+      <div style="background:#141414;padding:26px 22px">
+        <div style="font-family:'Anton',sans-serif;font-size:38px;color:#d9342b;line-height:1">03</div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(245,241,232,.6);margin-top:8px">Famílias tipográficas</div>
+      </div>
+      <div style="background:#141414;padding:26px 22px">
+        <div style="font-family:'Anton',sans-serif;font-size:38px;color:#d9342b;line-height:1">18</div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(245,241,232,.6);margin-top:8px">Grafismos de marca</div>
+      </div>
+      <div style="background:#141414;padding:26px 22px">
+        <div style="font-family:'Anton',sans-serif;font-size:38px;color:#d9342b;line-height:1">02</div>
+        <div style="font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(245,241,232,.6);margin-top:8px">Raios: reto ou pílula</div>
+      </div>
+    </div>
+  </section>
+
+  <section style="max-width:1180px;margin:0 auto;padding:64px 24px;border-top:1px solid rgba(245,241,232,.12)">
+    <div style="display:flex;align-items:baseline;gap:16px;margin-bottom:36px">
+      <span style="font-family:'Anton',sans-serif;font-size:14px;color:#d9342b;letter-spacing:.1em">01</span>
+      <h2 style="font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;margin:0">Fundamentos</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:28px">
+      <div style="border-top:2px solid #d9342b;padding-top:20px">
+        <h3 style="font-family:'Merriweather',Georgia,serif;font-size:22px;font-weight:700;margin:0 0 10px">Palco antes de tudo</h3>
+        <p style="font-size:15px;line-height:1.65;color:rgba(245,241,232,.7);margin:0;text-wrap:pretty">O preto é o fundo padrão. Ele é a caixa cênica: tudo o que aparece nele está iluminado de propósito. Fundos claros existem, mas como exceção — um respiro entre dois atos.</p>
+      </div>
+      <div style="border-top:2px solid #d9342b;padding-top:20px">
+        <h3 style="font-family:'Merriweather',Georgia,serif;font-size:22px;font-weight:700;margin:0 0 10px">Gesto, não decoração</h3>
+        <p style="font-size:15px;line-height:1.65;color:rgba(245,241,232,.7);margin:0;text-wrap:pretty">Os grafismos vêm do corpo em cena: arcos, raios, ondas. Entram grandes, cortados pela borda, um por vez. Nunca como padrão de fundo repetido nem como enfeite de canto.</p>
+      </div>
+      <div style="border-top:2px solid #d9342b;padding-top:20px">
+        <h3 style="font-family:'Merriweather',Georgia,serif;font-size:22px;font-weight:700;margin:0 0 10px">Fala direta</h3>
+        <p style="font-size:15px;line-height:1.65;color:rgba(245,241,232,.7);margin:0;text-wrap:pretty">Meio século de escola dispensa adjetivo. Títulos curtos em caixa alta, texto em segunda pessoa, verbo no presente. Sem promessa de fama, sem jargão de mercado.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="cor" style="max-width:1180px;margin:0 auto;padding:64px 24px;border-top:1px solid rgba(245,241,232,.12)">
+    <div style="display:flex;align-items:baseline;gap:16px;margin-bottom:14px">
+      <span style="font-family:'Anton',sans-serif;font-size:14px;color:#d9342b;letter-spacing:.1em">02</span>
+      <h2 style="font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;margin:0">Cor</h2>
+    </div>
+    <p style="font-size:15px;line-height:1.65;color:rgba(245,241,232,.6);max-width:60ch;margin:0 0 32px">Três cores fazem a marca inteira. Clique em qualquer amostra para copiar o valor.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:16px">
+      <div data-hex="#141414" onClick="{{ copyHex }}" style="cursor:pointer;border:1px solid rgba(245,241,232,.14)" style-hover="border-color:#d9342b">
+        <div style="background:#141414;height:150px;border-bottom:1px solid rgba(245,241,232,.14)"></div>
+        <div style="padding:16px 18px">
+          <div style="font-size:13px;font-weight:800;letter-spacing:.1em;text-transform:uppercase">Preto de palco</div>
+          <div style="font-family:ui-monospace,Menlo,monospace;font-size:12px;color:rgba(245,241,232,.55);margin-top:6px">#141414 · --ink</div>
+          <div style="font-size:12px;line-height:1.5;color:rgba(245,241,232,.5);margin-top:10px">Fundo padrão de páginas, e-mails e peças sociais.</div>
+        </div>
+      </div>
+      <div data-hex="#d9342b" onClick="{{ copyHex }}" style="cursor:pointer;border:1px solid rgba(245,241,232,.14)" style-hover="border-color:#d9342b">
+        <div style="background:#d9342b;height:150px"></div>
+        <div style="padding:16px 18px">
+          <div style="font-size:13px;font-weight:800;letter-spacing:.1em;text-transform:uppercase">Vermelho cortina</div>
+          <div style="font-family:ui-monospace,Menlo,monospace;font-size:12px;color:rgba(245,241,232,.55);margin-top:6px">#D9342B · --acento</div>
+          <div style="font-size:12px;line-height:1.5;color:rgba(245,241,232,.5);margin-top:10px">Ação, grafismo e ênfase. Um destaque por bloco.</div>
+        </div>
+      </div>
+      <div data-hex="#f5f1e8" onClick="{{ copyHex }}" style="cursor:pointer;border:1px solid rgba(245,241,232,.14)" style-hover="border-color:#d9342b">
+        <div style="background:#f5f1e8;height:150px"></div>
+        <div style="padding:16px 18px">
+          <div style="font-size:13px;font-weight:800;letter-spacing:.1em;text-transform:uppercase">Creme refletor</div>
+          <div style="font-family:ui-monospace,Menlo,monospace;font-size:12px;color:rgba(245,241,232,.55);margin-top:6px">#F5F1E8 · --papel</div>
+          <div style="font-size:12px;line-height:1.5;color:rgba(245,241,232,.5);margin-top:10px">Texto sobre preto e fundo das seções de respiro.</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));gap:16px;margin-top:16px">
+      <div data-hex="#1c1c1c" onClick="{{ copyHex }}" style="cursor:pointer;border:1px solid rgba(245,241,232,.14);padding:14px 16px" style-hover="border-color:#d9342b">
+        <div style="background:#1c1c1c;height:52px;border:1px solid rgba(245,241,232,.14);margin-bottom:12px"></div>
+        <div style="font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase">Preto suave</div>
+        <div style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:rgba(245,241,232,.5);margin-top:4px">#1C1C1C</div>
+      </div>
+      <div data-hex="#a8231d" onClick="{{ copyHex }}" style="cursor:pointer;border:1px solid rgba(245,241,232,.14);padding:14px 16px" style-hover="border-color:#d9342b">
+        <div style="background:#a8231d;height:52px;margin-bottom:12px"></div>
+        <div style="font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase">Vermelho fundo</div>
+        <div style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:rgba(245,241,232,.5);margin-top:4px">#A8231D · hover</div>
+      </div>
+      <div data-hex="#e8e2d4" onClick="{{ copyHex }}" style="cursor:pointer;border:1px solid rgba(245,241,232,.14);padding:14px 16px" style-hover="border-color:#d9342b">
+        <div style="background:#e8e2d4;height:52px;margin-bottom:12px"></div>
+        <div style="font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase">Creme sombra</div>
+        <div style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:rgba(245,241,232,.5);margin-top:4px">#E8E2D4</div>
+      </div>
+      <div data-hex="rgba(245,241,232,0.14)" onClick="{{ copyHex }}" style="cursor:pointer;border:1px solid rgba(245,241,232,.14);padding:14px 16px" style-hover="border-color:#d9342b">
+        <div style="background:rgba(245,241,232,.14);height:52px;margin-bottom:12px"></div>
+        <div style="font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase">Filete</div>
+        <div style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:rgba(245,241,232,.5);margin-top:4px">creme 14%</div>
+      </div>
+      <div data-hex="#25d366" onClick="{{ copyHex }}" style="cursor:pointer;border:1px solid rgba(245,241,232,.14);padding:14px 16px" style-hover="border-color:#d9342b">
+        <div style="background:#25d366;height:52px;margin-bottom:12px"></div>
+        <div style="font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase">WhatsApp</div>
+        <div style="font-family:ui-monospace,Menlo,monospace;font-size:11px;color:rgba(245,241,232,.5);margin-top:4px">#25D366 · só ícone</div>
+      </div>
+    </div>
+
+    <div style="margin-top:36px">
+      <div style="font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:rgba(245,241,232,.55);margin-bottom:12px">Proporção de uso</div>
+      <div style="display:flex;height:44px;overflow:hidden">
+        <div style="flex:70;background:#141414;border:1px solid rgba(245,241,232,.14);display:flex;align-items:center;padding-left:14px;font-size:11px;font-weight:700;letter-spacing:.1em;color:rgba(245,241,232,.6)">70% PRETO</div>
+        <div style="flex:22;background:#f5f1e8;display:flex;align-items:center;padding-left:14px;font-size:11px;font-weight:700;letter-spacing:.1em;color:#141414">22%</div>
+        <div style="flex:8;background:#d9342b;display:flex;align-items:center;padding-left:14px;font-size:11px;font-weight:700;letter-spacing:.1em;color:#f5f1e8">8%</div>
+      </div>
+      <p style="font-size:13px;line-height:1.6;color:rgba(245,241,232,.55);margin:12px 0 0;max-width:64ch">O vermelho nunca passa de um décimo da peça. Ele marca o que se clica e o grafismo que dá o tom — se estiver em tudo, não marca nada.</p>
+    </div>
+
+    <sc-if value="{{ mostrarTokens }}" hint-placeholder-val="{{ true }}">
+      <pre style="margin:28px 0 0;padding:20px 22px;background:#0d0d0d;border:1px solid rgba(245,241,232,.14);overflow-x:auto;font-family:ui-monospace,Menlo,monospace;font-size:12px;line-height:1.8;color:rgba(245,241,232,.75)">.indac {
+  --ink:        #141414;   --ink-suave:  #1c1c1c;
+  --acento:     #d9342b;   --acento-fundo: #a8231d;
+  --papel:      #f5f1e8;   --papel-sombra: #e8e2d4;
+  --filete:     rgba(245,241,232,.14);
+  --texto-2:    rgba(245,241,232,.70);
+}</pre>
+    </sc-if>
+  </section>
+
+  <section id="tipografia" style="background:#f5f1e8;color:#141414">
+    <div style="max-width:1180px;margin:0 auto;padding:72px 24px">
+      <div style="display:flex;align-items:baseline;gap:16px;margin-bottom:14px">
+        <span style="font-family:'Anton',sans-serif;font-size:14px;color:#d9342b;letter-spacing:.1em">03</span>
+        <h2 style="font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;margin:0;color:#141414">Tipografia</h2>
+      </div>
+      <p style="font-size:15px;line-height:1.65;color:rgba(20,20,20,.65);max-width:60ch;margin:0 0 40px">Três vozes: Anton grita, Merriweather narra, Montserrat organiza. Todas do Google Fonts, em uma única requisição.</p>
+
+      <div style="border-top:2px solid #141414;padding:24px 0 40px">
+        <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:baseline;margin-bottom:18px">
+          <span style="font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase">Anton · Display</span>
+          <span style="font-size:12px;color:rgba(20,20,20,.55)">Manchetes, números, marquise. Sempre caixa alta, entrelinha 0.9.</span>
+        </div>
+        <div style="font-family:'Anton',sans-serif;font-size:clamp(40px,8vw,92px);line-height:.9;text-transform:uppercase;letter-spacing:-.005em">Concretizando sonhos</div>
+      </div>
+
+      <div style="border-top:2px solid #141414;padding:24px 0 40px">
+        <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:baseline;margin-bottom:18px">
+          <span style="font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase">Merriweather · Editorial</span>
+          <span style="font-size:12px;color:rgba(20,20,20,.55)">Subtítulos e texto de respiro. Regular e bold, itálico para citação.</span>
+        </div>
+        <div style="font-family:'Merriweather',Georgia,serif;font-size:clamp(22px,3.4vw,34px);line-height:1.35;max-width:22ch;font-weight:700">O aluno se descobre criador e protagonista da própria criação.</div>
+        <div style="font-family:'Merriweather',Georgia,serif;font-style:italic;font-size:17px;line-height:1.7;color:rgba(20,20,20,.7);max-width:52ch;margin-top:18px">Aa Bb Cc Dd — 0123456789 — acentuação completa: ação, herói, três.</div>
+      </div>
+
+      <div style="border-top:2px solid #141414;padding:24px 0 0">
+        <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:baseline;margin-bottom:18px">
+          <span style="font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase">Montserrat · Interface</span>
+          <span style="font-size:12px;color:rgba(20,20,20,.55)">Corpo, rótulos, botões, formulários. Pesos 400 / 600 / 700 / 800.</span>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:24px">
+          <div>
+            <div style="font-size:17px;line-height:1.65;color:rgba(20,20,20,.8)">Corpo 17/1.65 — Durante dois anos e meio o aluno vivencia intensamente o processo teatral, com aulas de interpretação, corpo, voz, maquiagem e figurino.</div>
+          </div>
+          <div>
+            <div style="font-size:12px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;margin-bottom:10px">Rótulo 12/.18em</div>
+            <div style="font-size:15px;font-weight:600;line-height:1.6;margin-bottom:10px">Semibold 15 — títulos de cartão</div>
+            <div style="font-size:13px;line-height:1.6;color:rgba(20,20,20,.6)">Apoio 13 — legendas, notas de rodapé e crédito de foto.</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:44px;border:1px solid rgba(20,20,20,.18);overflow-x:auto">
+        <div style="display:grid;grid-template-columns:1.1fr 1fr .8fr .9fr;gap:1px;background:rgba(20,20,20,.14);font-size:12px;min-width:420px">
+          <div style="background:#f5f1e8;padding:12px 14px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;font-size:10px">Estilo</div>
+          <div style="background:#f5f1e8;padding:12px 14px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;font-size:10px">Família</div>
+          <div style="background:#f5f1e8;padding:12px 14px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;font-size:10px">Tamanho</div>
+          <div style="background:#f5f1e8;padding:12px 14px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;font-size:10px">Entrelinha</div>
+          <div style="background:#f5f1e8;padding:12px 14px">Display</div><div style="background:#f5f1e8;padding:12px 14px;color:rgba(20,20,20,.6)">Anton 400</div><div style="background:#f5f1e8;padding:12px 14px;color:rgba(20,20,20,.6)">64–116</div><div style="background:#f5f1e8;padding:12px 14px;color:rgba(20,20,20,.6)">0.88</div>
+          <div style="background:#f5f1e8;padding:12px 14px">Título 1</div><div style="background:#f5f1e8;padding:12px 14px;color:rgba(20,20,20,.6)">Anton 400</div><div style="background:#f5f1e8;padding:12px 14px;color:rgba(20,20,20,.6)">40–56</div><div style="background:#f5f1e8;padding:12px 14px;color:rgba(20,20,20,.6)">0.95</div>
+          <div style="background:#f5f1e8;padding:12px 14px">Título 2</div><div style="background:#f5f1e8;padding:12px 14px;color:rgba(20,20,20,.6)">Merriweather 700</div><div style="background:#f5f1e8;padding:12px 14px;color:rgba(20,20,20,.6)">26–34</div><div style="background:#f5f1e8;padding:12px 14px;color:rgba(20,20,20,.6)">1.35</div>
+          <div style="background:#f5f1e8;padding:12px 14px">Corpo</div><div style="background:#f5f1e8;padding:12px 14px;color:rgba(20,20,20,.6)">Montserrat 400</div><div style="background:#f5f1e8;padding:12px 14px;color:rgba(20,20,20,.6)">15–17</div><div style="background:#f5f1e8;padding:12px 14px;color:rgba(20,20,20,.6)">1.65</div>
+          <div style="background:#f5f1e8;padding:12px 14px">Rótulo</div><div style="background:#f5f1e8;padding:12px 14px;color:rgba(20,20,20,.6)">Montserrat 800</div><div style="background:#f5f1e8;padding:12px 14px;color:rgba(20,20,20,.6)">10–12</div><div style="background:#f5f1e8;padding:12px 14px;color:rgba(20,20,20,.6)">1.2 · .18em</div>
+        </div>
+      </div>
+
+      <sc-if value="{{ mostrarTokens }}" hint-placeholder-val="{{ true }}">
+        <pre style="margin:22px 0 0;padding:20px 22px;background:#141414;border:1px solid rgba(20,20,20,.18);overflow-x:auto;font-family:ui-monospace,Menlo,monospace;font-size:12px;line-height:1.8;color:rgba(245,241,232,.75)">&lt;link href="https://fonts.googleapis.com/css2?family=Anton
+&amp;family=Merriweather:ital,wght@0,400;0,700;1,400
+&amp;family=Montserrat:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"&gt;</pre>
+      </sc-if>
+    </div>
+  </section>
+
+  <section id="grafismos" style="max-width:1180px;margin:0 auto;padding:72px 24px">
+    <div style="display:flex;align-items:baseline;gap:16px;margin-bottom:14px">
+      <span style="font-family:'Anton',sans-serif;font-size:14px;color:#d9342b;letter-spacing:.1em">04</span>
+      <h2 style="font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;margin:0">Grafismos</h2>
+    </div>
+    <p style="font-size:15px;line-height:1.65;color:rgba(245,241,232,.6);max-width:62ch;margin:0 0 36px">Duas famílias. A geométrica é construída — recortes de pílula, arco e listra, sempre chapados em vermelho. A orgânica é traçada à mão — arcos aninhados em três espessuras, que funcionam como filete, moldura ou fundo.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:20px">
+      <figure style="margin:0;border:1px solid rgba(245,241,232,.14)">
+        <img src="grafismos/folha-geometrica.png" alt="Folha de grafismos geométricos INDAC" style="width:100%;display:block;background:#f5f1e8">
+        <figcaption style="padding:14px 18px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:rgba(245,241,232,.6)">Família geométrica · chapado</figcaption>
+      </figure>
+      <figure style="margin:0;border:1px solid rgba(245,241,232,.14)">
+        <img src="grafismos/folha-organica.png" alt="Folha de grafismos orgânicos INDAC" style="width:100%;display:block;background:#f5f1e8">
+        <figcaption style="padding:14px 18px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:rgba(245,241,232,.6)">Família orgânica · traço</figcaption>
+      </figure>
+    </div>
+
+    <div style="font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:rgba(245,241,232,.55);margin:44px 0 14px">Primitivos prontos para uso</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,168px),1fr));gap:1px;background:rgba(245,241,232,.14);border:1px solid rgba(245,241,232,.14)">
+      <div style="background:#141414;padding:22px;display:flex;flex-direction:column;gap:16px;align-items:center">
+        <svg viewBox="0 0 120 90" style="width:100%;height:76px"><rect x="4" y="4" width="52" height="82" rx="26" fill="#d9342b"></rect><rect x="12" y="12" width="36" height="66" rx="18" fill="#141414"></rect><rect x="60" y="4" width="52" height="82" rx="26" fill="#d9342b"></rect><rect x="68" y="12" width="36" height="66" rx="18" fill="#141414"></rect></svg>
+        <span style="font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(245,241,232,.55)">Pílula dupla</span>
+      </div>
+      <div style="background:#141414;padding:22px;display:flex;flex-direction:column;gap:16px;align-items:center">
+        <svg viewBox="0 0 120 90" style="width:100%;height:76px"><path d="M4 86 V4 h112 v34 H46 v48 Z" fill="#d9342b"></path><path d="M46 38 h70 v0 a34 34 0 0 0-34 34 H46 Z" fill="#141414"></path></svg>
+        <span style="font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(245,241,232,.55)">Cantoneira</span>
+      </div>
+      <div style="background:#141414;padding:22px;display:flex;flex-direction:column;gap:16px;align-items:center">
+        <svg viewBox="0 0 120 90" style="width:100%;height:76px"><g stroke="#d9342b" stroke-width="1.4"><line x1="60" y1="45" x2="60" y2="3"></line><line x1="60" y1="45" x2="81" y2="8"></line><line x1="60" y1="45" x2="97" y2="24"></line><line x1="60" y1="45" x2="102" y2="45"></line><line x1="60" y1="45" x2="97" y2="66"></line><line x1="60" y1="45" x2="81" y2="82"></line><line x1="60" y1="45" x2="60" y2="87"></line><line x1="60" y1="45" x2="39" y2="82"></line><line x1="60" y1="45" x2="23" y2="66"></line><line x1="60" y1="45" x2="18" y2="45"></line><line x1="60" y1="45" x2="23" y2="24"></line><line x1="60" y1="45" x2="39" y2="8"></line></g></svg>
+        <span style="font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(245,241,232,.55)">Raios</span>
+      </div>
+      <div style="background:#141414;padding:22px;display:flex;flex-direction:column;gap:16px;align-items:center">
+        <svg viewBox="0 0 120 90" style="width:100%;height:76px"><g fill="#d9342b"><rect x="4" y="6" width="112" height="2"></rect><rect x="4" y="13" width="112" height="3"></rect><rect x="4" y="22" width="112" height="4"></rect><rect x="4" y="33" width="112" height="6"></rect><rect x="4" y="46" width="112" height="8"></rect><rect x="4" y="61" width="112" height="25"></rect></g></svg>
+        <span style="font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(245,241,232,.55)">Listra degradê</span>
+      </div>
+      <div style="background:#141414;padding:22px;display:flex;flex-direction:column;gap:16px;align-items:center">
+        <svg viewBox="0 0 120 90" style="width:100%;height:76px"><path d="M4 6 C40 40 40 50 4 84 Z" fill="#d9342b"></path><path d="M116 6 C80 40 80 50 116 84 Z" fill="#d9342b"></path></svg>
+        <span style="font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(245,241,232,.55)">Ampulheta</span>
+      </div>
+      <div style="background:#141414;padding:22px;display:flex;flex-direction:column;gap:16px;align-items:center">
+        <svg viewBox="0 0 120 90" fill="none" stroke="#d9342b" style="width:100%;height:76px"><path d="M6 86 V44 A54 40 0 0 1 114 44 V86" stroke-width="1"></path><path d="M24 86 V46 A36 27 0 0 1 96 46 V86" stroke-width="2"></path><path d="M42 86 V48 A18 14 0 0 1 78 48 V86" stroke-width="3.4"></path></svg>
+        <span style="font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(245,241,232,.55)">Arcos aninhados</span>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:20px;margin-top:36px">
+      <div style="border:1px solid rgba(37,211,102,.35);padding:22px 24px">
+        <div style="font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#25d366;margin-bottom:14px">Pode</div>
+        <ul style="margin:0;padding-left:18px;font-size:14px;line-height:1.75;color:rgba(245,241,232,.72)">
+          <li>Escala grande, sangrando pela borda da peça.</li>
+          <li>Um grafismo por bloco, como âncora da composição.</li>
+          <li>Vermelho sobre preto, ou preto sobre creme.</li>
+          <li>Girar, espelhar e recortar em máscara de foto.</li>
+        </ul>
+      </div>
+      <div style="border:1px solid rgba(217,52,43,.45);padding:22px 24px">
+        <div style="font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#d9342b;margin-bottom:14px">Não pode</div>
+        <ul style="margin:0;padding-left:18px;font-size:14px;line-height:1.75;color:rgba(245,241,232,.72)">
+          <li>Ladrilhar como textura de fundo repetida.</li>
+          <li>Aplicar gradiente, sombra ou contorno externo.</li>
+          <li>Espremer fora de proporção ou inclinar em ângulos aleatórios.</li>
+          <li>Colocar texto por cima da área cheia do grafismo.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="componentes" style="border-top:1px solid rgba(245,241,232,.12)">
+    <div style="max-width:1180px;margin:0 auto;padding:72px 24px">
+      <div style="display:flex;align-items:baseline;gap:16px;margin-bottom:14px">
+        <span style="font-family:'Anton',sans-serif;font-size:14px;color:#d9342b;letter-spacing:.1em">05</span>
+        <h2 style="font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;margin:0">Componentes</h2>
+      </div>
+      <p style="font-size:15px;line-height:1.65;color:rgba(245,241,232,.6);max-width:62ch;margin:0 0 40px">Cantos só em dois valores: reto (0) ou pílula (999px). Nada de raio intermediário — é o que mantém a família geométrica coerente com a interface.</p>
+
+      <div style="font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:rgba(245,241,232,.55);margin-bottom:16px">Botões</div>
+      <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-bottom:16px">
+        <button style="cursor:pointer;border:none;background:#d9342b;color:#f5f1e8;padding:16px 30px;border-radius:999px;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;transition:.18s" style-hover="background:#a8231d;transform:translateY(-2px)">Quero me inscrever</button>
+        <button style="cursor:pointer;background:transparent;color:#f5f1e8;border:1px solid rgba(245,241,232,.35);padding:16px 30px;border-radius:999px;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;transition:.18s" style-hover="border-color:#f5f1e8;background:rgba(245,241,232,.07)">Conheça o curso</button>
+        <button style="cursor:pointer;background:transparent;border:none;color:#d9342b;padding:16px 4px;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;border-bottom:2px solid #d9342b;transition:.18s" style-hover="color:#f5f1e8;border-color:#f5f1e8">Ver todos os cursos →</button>
+        <button disabled="true" style="background:rgba(245,241,232,.08);color:rgba(245,241,232,.35);border:none;padding:16px 30px;border-radius:999px;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase">Turma encerrada</button>
+      </div>
+      <div style="font-size:13px;line-height:1.6;color:rgba(245,241,232,.5);margin-bottom:44px;max-width:62ch">Altura mínima 48px em qualquer tela. Um botão sólido por bloco; o resto é contorno ou texto.</div>
+
+      <div style="font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:rgba(245,241,232,.55);margin-bottom:16px">Selos e etiquetas</div>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:44px">
+        <span style="display:inline-flex;align-items:center;gap:8px;background:#d9342b;color:#f5f1e8;padding:8px 16px;border-radius:999px;font-size:10px;font-weight:800;letter-spacing:.18em;text-transform:uppercase">Inscrições abertas</span>
+        <span style="display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(245,241,232,.28);color:rgba(245,241,232,.8);padding:8px 16px;border-radius:999px;font-size:10px;font-weight:800;letter-spacing:.18em;text-transform:uppercase"><span style="width:5px;height:5px;background:#d9342b;border-radius:999px"></span>2 minutos</span>
+        <span style="display:inline-flex;align-items:center;background:#f5f1e8;color:#141414;padding:8px 16px;font-size:10px;font-weight:800;letter-spacing:.18em;text-transform:uppercase">Vagas limitadas</span>
+        <span style="display:inline-flex;align-items:center;border-left:3px solid #d9342b;padding:6px 14px;font-size:10px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:rgba(245,241,232,.75)">Curso livre</span>
+      </div>
+
+      <div style="font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:rgba(245,241,232,.55);margin-bottom:16px">Cartão de curso</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:20px;margin-bottom:44px">
+        <article style="background:#1c1c1c;border:1px solid rgba(245,241,232,.14);padding:0;overflow:hidden;transition:.2s" style-hover="border-color:#d9342b;transform:translateY(-3px)">
+          <div style="height:6px;background:#d9342b"></div>
+          <div style="padding:26px 24px">
+            <div style="font-size:10px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:#d9342b">2 anos e meio</div>
+            <h3 style="font-family:'Anton',sans-serif;font-weight:400;font-size:30px;line-height:1;text-transform:uppercase;margin:14px 0 12px">Curso profissionalizante</h3>
+            <p style="font-size:14px;line-height:1.65;color:rgba(245,241,232,.65);margin:0 0 22px">Formação completa para quem vai seguir carreira: interpretação, corpo, voz, maquiagem, figurino e montagem aberta ao público.</p>
+            <span style="font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#f5f1e8;border-bottom:2px solid #d9342b;padding-bottom:4px">Conheça o curso</span>
+          </div>
+        </article>
+        <article style="background:#1c1c1c;border:1px solid rgba(245,241,232,.14);overflow:hidden;transition:.2s" style-hover="border-color:#d9342b;transform:translateY(-3px)">
+          <div style="height:6px;background:#d9342b"></div>
+          <div style="padding:26px 24px">
+            <div style="font-size:10px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:#d9342b">Primeiro contato</div>
+            <h3 style="font-family:'Anton',sans-serif;font-weight:400;font-size:30px;line-height:1;text-transform:uppercase;margin:14px 0 12px">Curso livre</h3>
+            <p style="font-size:14px;line-height:1.65;color:rgba(245,241,232,.65);margin:0 0 22px">Expressão, improvisação e autoconhecimento em um espaço acolhedor para descobrir o prazer de atuar.</p>
+            <span style="font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#f5f1e8;border-bottom:2px solid #d9342b;padding-bottom:4px">Conheça o curso</span>
+          </div>
+        </article>
+        <article style="background:#f5f1e8;color:#141414;overflow:hidden;transition:.2s" style-hover="transform:translateY(-3px)">
+          <div style="padding:26px 24px">
+            <div style="font-size:10px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:#d9342b">Para atores com DRT</div>
+            <h3 style="font-family:'Anton',sans-serif;font-weight:400;font-size:30px;line-height:1;text-transform:uppercase;margin:14px 0 12px">Curso pós-DRT</h3>
+            <p style="font-size:14px;line-height:1.65;color:rgba(20,20,20,.7);margin:0 0 22px">Aperfeiçoamento técnico e pesquisa cênica, com criação autoral e linguagem teatral contemporânea.</p>
+            <span style="font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:#141414;border-bottom:2px solid #d9342b;padding-bottom:4px">Conheça o curso</span>
+          </div>
+        </article>
+      </div>
+
+      <div style="font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:rgba(245,241,232,.55);margin-bottom:16px">Formulário</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:20px;max-width:760px;margin-bottom:44px">
+        <label style="display:block">
+          <span style="display:block;font-size:10px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:rgba(245,241,232,.6);margin-bottom:9px">Nome</span>
+          <input type="text" placeholder="Seu nome completo" style="width:100%;box-sizing:border-box;background:#1c1c1c;border:1px solid rgba(245,241,232,.2);color:#f5f1e8;padding:15px 16px;font-family:'Montserrat',sans-serif;font-size:15px;outline:none" style-focus="border-color:#d9342b">
+        </label>
+        <label style="display:block">
+          <span style="display:block;font-size:10px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:rgba(245,241,232,.6);margin-bottom:9px">E-mail</span>
+          <input type="email" placeholder="voce@email.com" style="width:100%;box-sizing:border-box;background:#1c1c1c;border:1px solid rgba(245,241,232,.2);color:#f5f1e8;padding:15px 16px;font-family:'Montserrat',sans-serif;font-size:15px;outline:none" style-focus="border-color:#d9342b">
+        </label>
+      </div>
+
+      <div style="font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:rgba(245,241,232,.55);margin-bottom:16px">Passo de quiz · componente vivo</div>
+      <div style="max-width:640px;border:1px solid rgba(245,241,232,.16);background:#1c1c1c;position:relative;overflow:hidden">
+        <div style="height:4px;background:rgba(245,241,232,.12)">
+          <div style="height:100%;background:#d9342b;transition:width .35s ease;width:{{ progresso }}"></div>
+        </div>
+        <div style="padding:30px 28px 28px">
+          <div style="display:flex;justify-content:space-between;align-items:center;font-size:10px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:rgba(245,241,232,.5)">
+            <span>Pergunta {{ passoLabel }}</span>
+            <span style="color:#d9342b">Perfil artístico</span>
+          </div>
+          <h3 style="font-family:'Merriweather',Georgia,serif;font-size:22px;font-weight:700;line-height:1.4;margin:16px 0 22px;text-wrap:pretty">{{ pergunta }}</h3>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <sc-for list="{{ opcoes }}" as="op" hint-placeholder-count="4">
+              <button data-k="{{ op.k }}" onClick="{{ escolher }}" style="text-align:left;cursor:pointer;display:flex;gap:14px;align-items:center;background:{{ op.bg }};border:1px solid {{ op.borda }};color:#f5f1e8;padding:16px 18px;font-family:'Montserrat',sans-serif;font-size:15px;line-height:1.45;transition:.16s" style-hover="border-color:#d9342b">
+                <span style="flex:none;width:26px;height:26px;border-radius:999px;background:{{ op.chipBg }};color:{{ op.chipCor }};display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800">{{ op.k }}</span>
+                <span>{{ op.texto }}</span>
+              </button>
+            </sc-for>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-top:22px">
+            <button onClick="{{ voltar }}" style="cursor:pointer;background:transparent;border:none;color:rgba(245,241,232,.5);font-family:'Montserrat',sans-serif;font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase" style-hover="color:#f5f1e8">← Voltar</button>
+            <div style="font-size:11px;color:rgba(245,241,232,.4);letter-spacing:.1em">{{ dica }}</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:rgba(245,241,232,.55);margin:44px 0 16px">Depoimento</div>
+      <blockquote style="margin:0;max-width:760px;border-left:3px solid #d9342b;padding:6px 0 6px 26px">
+        <p style="font-family:'Merriweather',Georgia,serif;font-style:italic;font-size:20px;line-height:1.6;margin:0 0 16px;color:rgba(245,241,232,.9);text-wrap:pretty">Entrei achando que ia aprender a decorar texto. Saí sabendo escutar, sustentar silêncio e olhar para o outro em cena.</p>
+        <footer style="font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:rgba(245,241,232,.5)">Aluna · Curso Livre, turma 2025</footer>
+      </blockquote>
+    </div>
+  </section>
+
+  <section id="aplicacao" style="border-top:1px solid rgba(245,241,232,.12)">
+    <div style="max-width:1180px;margin:0 auto;padding:72px 24px">
+      <div style="display:flex;align-items:baseline;gap:16px;margin-bottom:14px">
+        <span style="font-family:'Anton',sans-serif;font-size:14px;color:#d9342b;letter-spacing:.1em">06</span>
+        <h2 style="font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;margin:0">Aplicação</h2>
+      </div>
+      <p style="font-size:15px;line-height:1.65;color:rgba(245,241,232,.6);max-width:62ch;margin:0 0 32px">O sistema montado: grafismo sangrando, manchete em Anton, um botão sólido e nada mais competindo.</p>
+
+      <div style="position:relative;border:1px solid rgba(245,241,232,.14);background:#141414;overflow:hidden">
+        <div style="position:absolute;right:-8%;bottom:-30%;width:min(52%,420px);opacity:.9;pointer-events:none">
+          <svg viewBox="0 0 200 200" fill="none" stroke="#d9342b" style="width:100%;display:block">
+            <path d="M4 200 V96 A96 78 0 0 1 196 96 V200" stroke-width="1"></path>
+            <path d="M36 200 V100 A64 54 0 0 1 164 100 V200" stroke-width="2"></path>
+            <path d="M68 200 V104 A32 30 0 0 1 132 104 V200" stroke-width="4"></path>
+          </svg>
+        </div>
+        <div style="position:relative;padding:clamp(32px,6vw,72px);max-width:760px">
+          <span style="display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(245,241,232,.28);padding:8px 16px;border-radius:999px;font-size:10px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:rgba(245,241,232,.75)"><span style="width:5px;height:5px;background:#d9342b;border-radius:999px"></span>Teste gratuito · 2 minutos</span>
+          <h3 style="font-family:'Anton',sans-serif;font-weight:400;font-size:clamp(36px,6.5vw,72px);line-height:.92;text-transform:uppercase;margin:24px 0 0">Qual é o seu <span style="color:#d9342b">perfil artístico</span>?</h3>
+          <p style="font-family:'Merriweather',Georgia,serif;font-size:17px;line-height:1.65;color:rgba(245,241,232,.72);max-width:46ch;margin:22px 0 30px">Oito perguntas para entender onde você está na sua jornada com o teatro — e qual é o próximo passo dentro do INDAC.</p>
+          <button style="cursor:pointer;border:none;background:#d9342b;color:#f5f1e8;padding:17px 34px;border-radius:999px;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;transition:.18s" style-hover="background:#a8231d;transform:translateY(-2px)">Começar o teste</button>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:20px;margin-top:20px">
+        <div style="background:#f5f1e8;color:#141414;padding:34px 30px;position:relative;overflow:hidden">
+          <div style="position:absolute;left:-30px;top:-30px;width:120px;height:120px;background:#d9342b;border-radius:999px;opacity:.14"></div>
+          <div style="position:relative;font-size:10px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:#d9342b">Seção de respiro</div>
+          <h4 style="position:relative;font-family:'Merriweather',Georgia,serif;font-size:26px;line-height:1.3;margin:14px 0 12px">Fundo creme, uma vez por página</h4>
+          <p style="position:relative;font-size:14px;line-height:1.65;color:rgba(20,20,20,.7);margin:0">Serve para quebrar o escuro no meio da leitura. No creme, o texto vai a #141414 e o vermelho continua sendo só o acento.</p>
+        </div>
+        <div style="background:#d9342b;color:#f5f1e8;padding:34px 30px;position:relative;overflow:hidden">
+          <div style="position:absolute;right:0;bottom:0;width:150px;opacity:.28">
+            <svg viewBox="0 0 120 90" style="width:100%;display:block"><g fill="#141414"><rect x="0" y="6" width="120" height="2"></rect><rect x="0" y="14" width="120" height="3"></rect><rect x="0" y="24" width="120" height="5"></rect><rect x="0" y="37" width="120" height="7"></rect><rect x="0" y="52" width="120" height="38"></rect></g></svg>
+          </div>
+          <div style="position:relative;font-size:10px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;opacity:.85">Faixa de ação</div>
+          <h4 style="position:relative;font-family:'Anton',sans-serif;font-weight:400;font-size:30px;line-height:1.05;text-transform:uppercase;margin:14px 0 12px">Vermelho cheio só em faixa de CTA</h4>
+          <p style="position:relative;font-size:14px;line-height:1.65;margin:0">Uma por página, altura curta, texto em creme sólido. Nunca como fundo de bloco longo de leitura.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer style="border-top:1px solid rgba(245,241,232,.12)">
+    <div style="max-width:1180px;margin:0 auto;padding:44px 24px 64px;display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between">
+      <div style="display:flex;align-items:center;gap:12px">
+        <div style="width:14px;height:28px;background:#d9342b;border-radius:999px"></div>
+        <div style="font-size:12px;line-height:1.6;color:rgba(245,241,232,.55)">INDAC Escola de Atores · R. Clélia, 658 — Barra Funda, São Paulo</div>
+      </div>
+      <div style="font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(245,241,232,.4)">Sistema de design v1.0</div>
+    </div>
+  </footer>
+
+  <div style="position:fixed;left:50%;bottom:26px;transform:translateX(-50%);z-index:60;background:#f5f1e8;color:#141414;padding:12px 22px;border-radius:999px;font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;pointer-events:none;transition:opacity .25s;opacity:{{ toastOpacidade }}">{{ toastTexto }}</div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;mostrarTokens&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Documentação&quot;},&quot;grafismoHero&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;raios&quot;,&quot;arcos&quot;,&quot;ondas&quot;,&quot;nenhum&quot;],&quot;default&quot;:&quot;raios&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Grafismos&quot;},&quot;quizAutoAvancar&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Componentes&quot;}}">
+const PERGUNTAS = [
+  { q: "Quando pensa em estar no palco, qual dessas imagens combina mais com você?", o: [
+    { k: "A", texto: "A plateia cheia e o silêncio antes da primeira fala" },
+    { k: "B", texto: "A sala de ensaio, repetindo a cena até virar verdade" },
+    { k: "C", texto: "O grupo inteiro rindo depois de um improviso que deu certo" },
+    { k: "D", texto: "Eu sozinho com o texto, descobrindo o personagem" } ] },
+  { q: "Quando você pensa na sua trajetória com o teatro, qual frase combina mais?", o: [
+    { k: "A", texto: "Nunca fiz, mas sempre quis experimentar" },
+    { k: "B", texto: "Já fiz curso livre e quero ir mais fundo" },
+    { k: "C", texto: "Faço teatro há anos e quero profissionalizar" },
+    { k: "D", texto: "Sou formado e busco aperfeiçoamento" } ] },
+  { q: "O que você sente que mais te impulsiona a buscar o teatro agora?", o: [
+    { k: "A", texto: "Vencer a timidez e me expressar melhor" },
+    { k: "B", texto: "Uma virada de carreira que já está decidida" },
+    { k: "C", texto: "O prazer de criar junto com outras pessoas" },
+    { k: "D", texto: "Aprofundar a técnica que já tenho" } ] }
+];
+
+class Component extends DCLogic {
+  state = { passo: 0, escolhas: {}, toast: "" };
+
+  copyHex = (e) => {
+    const hex = e.currentTarget.dataset.hex || "";
+    if (navigator.clipboard) navigator.clipboard.writeText(hex).catch(() => {});
+    this.setState({ toast: hex + " copiado" });
+    clearTimeout(this._t);
+    this._t = setTimeout(() => this.setState({ toast: "" }), 1600);
+  };
+
+  escolher = (e) => {
+    const k = e.currentTarget.dataset.k;
+    const passo = this.state.passo;
+    const escolhas = Object.assign({}, this.state.escolhas, { [passo]: k });
+    this.setState({ escolhas });
+    if (this.props.quizAutoAvancar !== false && passo < PERGUNTAS.length - 1) {
+      clearTimeout(this._q);
+      this._q = setTimeout(() => this.setState({ passo: passo + 1 }), 320);
+    }
+  };
+
+  voltar = () => this.setState(s => ({ passo: Math.max(0, s.passo - 1) }));
+
+  componentWillUnmount() { clearTimeout(this._t); clearTimeout(this._q); }
+
+  renderVals() {
+    const grafismo = this.props.grafismoHero ?? "raios";
+    const passo = this.state.passo;
+    const atual = PERGUNTAS[passo];
+    const sel = this.state.escolhas[passo];
+    return {
+      mostrarTokens: this.props.mostrarTokens !== false,
+      heroRaios: grafismo === "raios",
+      heroArcos: grafismo === "arcos",
+      heroOndas: grafismo === "ondas",
+      passoLabel: (passo + 1) + " de " + PERGUNTAS.length,
+      progresso: Math.round(((passo + (sel ? 1 : 0)) / PERGUNTAS.length) * 100) + "%",
+      pergunta: atual.q,
+      dica: this.props.quizAutoAvancar === false ? "Escolha uma alternativa" : "Avança sozinho ao escolher",
+      opcoes: atual.o.map(op => ({
+        k: op.k,
+        texto: op.texto,
+        bg: sel === op.k ? "rgba(217,52,43,.14)" : "transparent",
+        borda: sel === op.k ? "#d9342b" : "rgba(245,241,232,.18)",
+        chipBg: sel === op.k ? "#d9342b" : "rgba(245,241,232,.12)",
+        chipCor: sel === op.k ? "#f5f1e8" : "rgba(245,241,232,.7)"
+      })),
+      toastTexto: this.state.toast || "",
+      toastOpacidade: this.state.toast ? 1 : 0,
+      copyHex: this.copyHex,
+      escolher: this.escolher,
+      voltar: this.voltar
+    };
+  }
+}
+
+</script>
+</body>
+</html>
