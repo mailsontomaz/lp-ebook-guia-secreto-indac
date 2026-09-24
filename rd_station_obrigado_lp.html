@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Obrigado: Seu Guia Está Pronto | INDAC Escola de Atores</title>
+  <meta name="description" content="Seu cadastro foi confirmado. Baixe agora o ebook O Guia (Não Tão) Secreto Para Se Tornar Ator do INDAC Escola de Atores.">
+  
+  <!-- Fontes Oficiais INDAC (Google Fonts em requisição única) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Merriweather:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    /* ==========================================================================
+       RESET & COMPATIBILIDADE RD STATION MARKETING (FULL-BLEED EDGES)
+       ========================================================================== */
+    html, body {
+      margin: 0 !important;
+      padding: 0 !important;
+      background-color: #141414 !important;
+      color: #f5f1e8 !important;
+      font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+      width: 100%;
+    }
+
+    /* Neutralização completa de containers externos do RD Station */
+    #bricks-page-wrapper, .bricks-page-section, .bricks-page-section > div, .bricks-component,
+    .rd-section, .rd-row, .rd-column, .bricks--section, .bricks--row, .bricks--column > div {
+      padding: 0 !important;
+      margin: 0 !important;
+      max-width: 100% !important;
+      width: 100% !important;
+      background-color: transparent !important;
+      border: none !important;
+    }
+
+    /* ==========================================================================
+       TOKENS DE DESIGN SYSTEM INDAC (CANÔNICOS)
+       ========================================================================== */
+    :root {
+      --ink: #141414;
+      --ink-suave: #1c1c1c;
+      --ink-elevated: #242424;
+      --acento: #d9342b;
+      --acento-fundo: #a8231d;
+      --papel: #f5f1e8;
+      --papel-sombra: #e8e2d4;
+      --filete: rgba(245, 241, 232, 0.14);
+      --filete-suave: rgba(245, 241, 232, 0.08);
+      --filete-forte: rgba(245, 241, 232, 0.28);
+      --texto-2: rgba(245, 241, 232, 0.70);
+      --texto-muted: rgba(245, 241, 232, 0.45);
+      --font-display: 'Anton', system-ui, sans-serif;
+      --font-serif: 'Merriweather', Georgia, serif;
+      --font-body: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --max-w: 1600px;
+    }
+
+    ::selection {
+      background: var(--acento);
+      color: var(--papel);
+    }
+
+    * {
+      box-sizing: border-box !important;
+    }
+
+    @keyframes indacPulse {
+      0%, 100% { transform: scale(1); opacity: 0.9; }
+      50% { transform: scale(1.06); opacity: 1; }
+    }
+
+    /* Acessibilidade de Movimento Reduzido */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+
+    /* ==========================================================================
+       ESTRUTURA GERAL & CONTAINERS
+       ========================================================================== */
+    .indac-wrapper {
+      background-color: var(--ink);
+      color: var(--papel);
+      width: 100%;
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+      font-family: var(--font-body);
+    }
+
+    .indac-wrap {
+      width: 100%;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 clamp(20px, 3.5vw, 56px);
+      position: relative;
+      box-sizing: border-box;
+    }
+
+    @media (max-width: 640px) {
+      .indac-wrap { padding: 0 18px; }
+    }
+
+    .indac-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 clamp(20px, 3.5vw, 40px);
+      position: relative;
+    }
+
+    /* ==========================================================================
+       HEADER CANÔNICO INDAC (references/header-footer.html)
+       ========================================================================== */
+    .lp-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(20, 20, 20, 0.94);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--filete);
+    }
+    .header-inner {
+      padding: 14px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .header-brand { display: flex; align-items: center; text-decoration: none; }
+    .header-logo-img { height: 36px; width: auto; max-height: 36px; display: block; transition: opacity 0.18s ease; }
+    .header-logo-img:hover { opacity: 0.88; }
+    .header-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      border: 1px solid var(--filete-forte);
+      color: var(--papel);
+      padding: 9px 18px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.18s ease, border-color 0.18s ease;
+      white-space: nowrap;
+    }
+    .header-cta-btn:hover { background: rgba(245, 241, 232, 0.08); border-color: var(--papel); color: var(--papel); }
+    .header-cta-btn svg { width: 14px; height: 14px; fill: #25D366; }
+
+    /* ==========================================================================
+       HERO CURTO DE OBRIGADO
+       ========================================================================== */
+    .obrigado-hero {
+      position: relative;
+      padding: 64px 0 72px;
+      border-bottom: 1px solid var(--filete);
+      overflow: hidden;
+    }
+
+    .obrigado-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 48px;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 16px;
+      border: 1px solid var(--filete-forte);
+      border-radius: 999px;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--papel);
+      background: rgba(245, 241, 232, 0.04);
+      margin-bottom: 20px;
+      width: fit-content;
+    }
+
+    .hero-badge-dot {
+      width: 6px;
+      height: 6px;
+      background: var(--acento);
+      border-radius: 999px;
+      display: inline-block;
+      animation: indacPulse 2s infinite ease-in-out;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: clamp(38px, 5.2vw, 68px);
+      line-height: 0.92;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+      color: var(--papel);
+      margin: 0 0 18px 0;
+    }
+
+    .hero-title span {
+      color: var(--acento);
+    }
+
+    .hero-subtitle {
+      font-family: var(--font-serif);
+      font-size: clamp(17px, 1.8vw, 21px);
+      line-height: 1.55;
+      color: var(--texto-2);
+      margin: 0 0 28px 0;
+      font-weight: 400;
+    }
+
+    .btn-download-solid {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      min-height: 48px;
+      background: var(--acento);
+      color: var(--papel);
+      padding: 16px 36px;
+      border-radius: 999px;
+      font-family: var(--font-body);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.18s ease, transform 0.18s ease;
+      cursor: pointer;
+    }
+
+    .btn-download-solid:hover {
+      background: var(--acento-fundo);
+      transform: translateY(-2px);
+      color: var(--papel);
+    }
+
+    /* Aviso de envio por e-mail (filete lateral) */
+    .email-alert-notice {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-top: 28px;
+      padding: 16px 20px;
+      background: rgba(245, 241, 232, 0.04);
+      border-left: 3px solid var(--acento);
+      border-top: 1px solid var(--filete);
+      border-right: 1px solid var(--filete);
+      border-bottom: 1px solid var(--filete);
+      max-width: 580px;
+    }
+
+    .email-alert-icon {
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .email-alert-text {
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--texto-2);
+    }
+
+    .obrigado-media-wrap {
+      border: 1px solid var(--filete);
+      background: var(--ink-suave);
+      border-radius: 0;
+      overflow: hidden;
+    }
+
+    .obrigado-media-wrap img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* ==========================================================================
+       BLOCO PRINCIPAL: CONVITE AO QUIZ (ARCOS ANINHADOS SANGRANDO)
+       ========================================================================== */
+    .quiz-feature-section {
+      padding: 96px 0;
+      border-bottom: 1px solid var(--filete);
+      position: relative;
+      overflow: hidden;
+      background: #111111;
+    }
+
+    .quiz-feature-bg-arcs {
+      position: absolute;
+      right: -5%;
+      bottom: -20%;
+      width: min(52%, 460px);
+      opacity: 0.45;
+      pointer-events: none;
+    }
+
+    .quiz-feature-box {
+      max-width: 820px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .quiz-feature-pill {
+      display: inline-flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      border: 1px solid var(--filete-forte);
+      padding: 8px 18px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--texto-2);
+      line-height: 1.4;
+      margin-bottom: 22px;
+      background: rgba(245, 241, 232, 0.04);
+      max-width: 100%;
+    }
+
+    .quiz-feature-pill span:first-child {
+      width: 6px;
+      height: 6px;
+      background: var(--acento);
+      border-radius: 999px;
+      flex-shrink: 0;
+    }
+
+    .quiz-feature-headline {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: clamp(38px, 6vw, 76px);
+      line-height: 0.92;
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+      margin: 0 0 24px 0;
+      color: var(--papel);
+    }
+
+    .quiz-feature-headline span {
+      color: var(--acento);
+    }
+
+    .quiz-feature-desc {
+      font-family: var(--font-serif);
+      font-size: clamp(17px, 1.8vw, 20px);
+      line-height: 1.65;
+      color: var(--texto-2);
+      margin: 0 0 36px 0;
+      max-width: 58ch;
+    }
+
+    .quiz-benefits-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+
+    .quiz-benefit-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--papel);
+    }
+
+    .quiz-benefit-icon {
+      width: 24px;
+      height: 24px;
+      border-radius: 999px;
+      background: rgba(217, 52, 43, 0.18);
+      color: var(--acento);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .btn-quiz-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      min-height: 48px;
+      background: var(--acento);
+      color: var(--papel);
+      padding: 16px 36px;
+      border-radius: 999px;
+      font-family: var(--font-body);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.18s ease, transform 0.18s ease;
+    }
+
+    .btn-quiz-cta:hover {
+      background: var(--acento-fundo);
+      transform: translateY(-2px);
+      color: var(--papel);
+    }
+
+    /* ==========================================================================
+       SEÇÃO: OUTROS CAMINHOS NO INDAC
+       ========================================================================== */
+    .pathways-section {
+      padding: 84px 0;
+      border-bottom: 1px solid var(--filete);
+      position: relative;
+    }
+
+    .section-eyebrow {
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+      margin-bottom: 12px;
+    }
+
+    .section-num {
+      font-family: var(--font-display);
+      font-size: 14px;
+      color: var(--acento);
+      letter-spacing: 0.1em;
+    }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      margin: 0;
+      color: var(--papel);
+    }
+
+    .section-headline {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 4vw, 54px);
+      line-height: 0.95;
+      text-transform: uppercase;
+      letter-spacing: -0.005em;
+      margin: 0 0 20px 0;
+      max-width: 22ch;
+    }
+
+    .section-headline span {
+      color: var(--acento);
+    }
+
+    .section-lead {
+      font-family: var(--font-serif);
+      font-size: 17px;
+      line-height: 1.65;
+      color: var(--texto-2);
+      max-width: 64ch;
+      margin: 0 0 52px 0;
+    }
+
+    .pathways-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+      gap: 28px;
+    }
+
+    .pathway-card {
+      background: var(--ink-suave);
+      border: 1px solid var(--filete);
+      padding: 36px 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+    }
+
+    .pathway-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(245, 241, 232, 0.60);
+      margin-bottom: 16px;
+    }
+
+    .pathway-title {
+      font-family: var(--font-display);
+      font-size: 28px;
+      line-height: 1.05;
+      text-transform: uppercase;
+      color: var(--papel);
+      margin: 0 0 14px 0;
+    }
+
+    .pathway-desc {
+      font-size: 15px;
+      line-height: 1.65;
+      color: var(--texto-2);
+      margin: 0 0 28px 0;
+      flex-grow: 1;
+    }
+
+    .btn-pathway {
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      min-height: 48px;
+      background: transparent;
+      border: 1px solid rgba(245, 241, 232, 0.35);
+      color: var(--papel);
+      padding: 14px 20px;
+      border-radius: 999px;
+      font-family: var(--font-body);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: background 0.18s ease, border-color 0.18s ease;
+    }
+
+    .btn-pathway:hover {
+      background: rgba(245, 241, 232, 0.08);
+      border-color: var(--papel);
+      color: var(--papel);
+    }
+
+    .btn-pathway svg {
+      transition: transform 0.18s ease;
+    }
+
+    .btn-pathway:hover svg {
+      transform: translateX(4px);
+    }
+
+    /* ==========================================================================
+       RODAPÉ CANÔNICO INDAC (references/header-footer.html)
+       ========================================================================== */
+    .site-footer {
+      background-color: #080808;
+      border-top: 1px solid var(--filete);
+      padding: 4.5rem 0 2.5rem;
+      font-size: 15px;
+      color: var(--texto-2);
+    }
+    .footer-grid { display: grid; grid-template-columns: 1fr; gap: 2.5rem; }
+    @media (min-width: 640px) { .footer-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 900px) { .footer-grid { grid-template-columns: 2fr 1fr 1fr; gap: 3.5rem; } }
+    .footer-logo { height: 44px; width: auto; margin-bottom: 1.2rem; display: block; }
+    .footer-address { line-height: 1.65; font-size: 15px; color: var(--texto-2); }
+    .footer-title {
+      color: var(--papel);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin: 0 0 1.2rem;
+    }
+    .footer-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.65rem; }
+    .footer-list a { color: var(--texto-2); text-decoration: none; font-size: 15px; transition: color 0.18s ease; }
+    .footer-list a:hover { color: var(--acento); }
+    .footer-bottom {
+      margin-top: 3.2rem;
+      padding-top: 1.8rem;
+      border-top: 1px solid rgba(245, 241, 232, 0.08);
+      text-align: center;
+      color: var(--texto-muted);
+      font-size: 14px;
+      line-height: 1.8;
+    }
+    .footer-bottom p { margin: 0.25rem 0; }
+    .footer-bottom a { color: var(--texto-2); text-decoration: none; transition: color 0.18s ease; }
+    .footer-bottom a:hover { color: var(--papel); }
+    .dev-signature a { font-weight: 700; color: var(--papel); }
+
+    /* ==========================================================================
+       RESPONSIVIDADE (MOBILE & TABLET)
+       ========================================================================== */
+    @media (max-width: 991px) {
+      .obrigado-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .obrigado-hero {
+        padding: 40px 0 60px;
+      }
+      .quiz-feature-section, .pathways-section {
+        padding: 60px 0;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .hero-title {
+        font-size: 34px;
+      }
+      .quiz-feature-headline {
+        font-size: 34px;
+      }
+      .btn-download-solid, .btn-quiz-cta {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="indac-wrapper">
+
+  <!-- ==========================================================================
+       HEADER CANÔNICO INDAC (references/header-footer.html)
+       ========================================================================== -->
+  <header class="lp-header">
+    <div class="indac-wrap header-inner">
+      <a href="https://indacescoladeatores.com.br" target="_blank" rel="noopener" class="header-brand" aria-label="INDAC Escola de Atores">
+        <img src="https://indacescoladeatores.com.br/wp-content/uploads/2025/10/log.png" alt="INDAC Escola de Atores" class="header-logo-img" height="36">
+      </a>
+      <a href="https://wa.link/izisk6" target="_blank" rel="noopener" class="header-cta-btn">
+        <svg viewBox="0 0 448 512" aria-hidden="true"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L3 480l117.7-30.9c32.4 17.7 68.9 27 106.2 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"></path></svg>
+        <span>Falar no WhatsApp</span>
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==========================================================================
+         HERO CURTO DE OBRIGADO
+         ========================================================================== -->
+    <section class="obrigado-hero">
+      <div class="indac-container">
+        <div class="obrigado-grid">
+          
+          <div class="obrigado-copy">
+            <div class="hero-badge">
+              <span class="hero-badge-dot"></span>
+              <span>Cadastro confirmado</span>
+            </div>
+
+            <h1 class="hero-title">
+              Seu guia <span>está pronto</span>
+            </h1>
+
+            <p class="hero-subtitle">
+              Seu acesso foi liberado. Clique no botão abaixo para baixar o ebook em PDF:
+            </p>
+
+            <!-- TROCAR: URL absoluta do PDF no Gerenciador de Arquivos do RD -->
+            <a href="https://d335luupugsy2.cloudfront.net/medias/indac/Ebook_Guia_Secreto_Ator_Indac_Master.pdf" target="_blank" rel="noopener" class="btn-download-solid">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span>Baixar o guia (PDF)</span>
+            </a>
+
+            <!-- Aviso de e-mail com filete lateral -->
+            <div class="email-alert-notice">
+              <div class="email-alert-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#d9342b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="2" y="4" width="20" height="16" rx="0"></rect>
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                </svg>
+              </div>
+              <p class="email-alert-text">
+                Também enviamos o link para o seu e-mail, para você baixar quando e onde quiser. Não chegou? Olhe a caixa de promoções e o spam.
+              </p>
+            </div>
+          </div>
+
+          <!-- Mockup oficial ao lado no desktop e abaixo no mobile -->
+          <!-- TROCAR: URL do mockup em WebP no Gerenciador de Arquivos do RD -->
+          <div class="obrigado-media-wrap">
+            <img 
+              src="https://email-editor-production.s3.amazonaws.com/images/811533/Ebook/Book_and_smartphone_displaying_d%E2%80%A6_2K_20260923191228.jpeg" 
+              alt="O Guia (Não Tão) Secreto Para Se Tornar Ator - Edição INDAC" 
+              width="1920" 
+              height="1080" 
+              loading="eager"
+            >
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         BLOCO PRINCIPAL: CONVITE AO QUIZ (ARCOS ANINHADOS SANGRANDO)
+         ========================================================================== -->
+    <section class="quiz-feature-section" id="secao-quiz">
+      <div class="quiz-feature-bg-arcs">
+        <svg viewBox="0 0 200 200" fill="none" stroke="#d9342b" aria-hidden="true" style="width:100%;display:block">
+          <path d="M4 200 V96 A96 78 0 0 1 196 96 V200" stroke-width="1"></path>
+          <path d="M36 200 V100 A64 54 0 0 1 164 100 V200" stroke-width="2"></path>
+          <path d="M68 200 V104 A32 30 0 0 1 132 104 V200" stroke-width="4"></path>
+        </svg>
+      </div>
+
+      <div class="indac-container">
+        <div class="quiz-feature-box">
+          
+          <div class="quiz-feature-pill">
+            <span></span>
+            <span>Teste gratuito · 8 perguntas · 3 min</span>
+          </div>
+
+          <h2 class="quiz-feature-headline">
+            Qual é o seu <span>Perfil Artístico</span>?
+          </h2>
+
+          <p class="quiz-feature-desc">
+            8 perguntas · 3 minutos · diagnóstico enviado por e-mail. Descubra onde você está hoje na sua relação com o teatro e qual é o próximo passo mais inteligente para sua evolução cênica.
+          </p>
+
+          <div class="quiz-benefits-row">
+            <div class="quiz-benefit-item">
+              <span class="quiz-benefit-icon">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </span>
+              <span>8 perguntas objetivas</span>
+            </div>
+            <div class="quiz-benefit-item">
+              <span class="quiz-benefit-icon">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </span>
+              <span>3 minutos de duração</span>
+            </div>
+            <div class="quiz-benefit-item">
+              <span class="quiz-benefit-icon">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </span>
+              <span>Diagnóstico enviado por e-mail</span>
+            </div>
+          </div>
+
+          <a href="https://lp.indacescoladeatores.com.br/quiz-perfil-artisticov1" target="_blank" rel="noopener" class="btn-quiz-cta">
+            <span>Fazer o Quiz de Perfil Artístico</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SEÇÃO: OUTROS CAMINHOS NO INDAC
+         ========================================================================== -->
+    <section class="pathways-section" id="caminhos-indac">
+      <div class="indac-container">
+        <div class="section-eyebrow">
+          <span class="section-num">02</span>
+          <p class="section-label">Viva a Experiência</p>
+        </div>
+
+        <h2 class="section-headline">
+          Conheça Outros <span>Caminhos</span> no INDAC
+        </h2>
+
+        <p class="section-lead">
+          A leitura do guia é apenas o primeiro passo. Conheça as oportunidades práticas para vivenciar o teatro de perto com nossa equipe e nossos professores:
+        </p>
+
+        <div class="pathways-grid">
+          
+          <!-- Card 1: Imersão Cênica -->
+          <div class="pathway-card">
+            <div>
+              <span class="pathway-badge">Vivência Gratuita</span>
+              <h3 class="pathway-title">Imersão Cênica</h3>
+              <p class="pathway-desc">
+                Vivência gratuita de 2 dias, com oficinas de corpo, voz e interpretação e feedback profissional nos palcos do INDAC.
+              </p>
+            </div>
+            <a href="https://lp.indacescoladeatores.com.br/imersao-cenica" target="_blank" rel="noopener" class="btn-pathway">
+              <span>Conhecer a Imersão</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Card 2: Visite o INDAC -->
+          <div class="pathway-card">
+            <div>
+              <span class="pathway-badge">Visita Presencial</span>
+              <h3 class="pathway-title">Visite o INDAC</h3>
+              <p class="pathway-desc">
+                Agende uma visita gratuita à escola na Rua Clélia, 658, e venha conhecer de perto nossa estrutura e rotina de formação.
+              </p>
+            </div>
+            <a href="https://lp.indacescoladeatores.com.br/visiteoindac" target="_blank" rel="noopener" class="btn-pathway">
+              <span>Agendar Minha Visita</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+
+          <!-- Card 3: Agendar Conversa -->
+          <div class="pathway-card">
+            <div>
+              <span class="pathway-badge">Bate-papo Online</span>
+              <h3 class="pathway-title">Agendar Conversa</h3>
+              <p class="pathway-desc">
+                Bate-papo online, individual e gratuito com um especialista em formação artística, com retorno em até 24h úteis pelo WhatsApp.
+              </p>
+            </div>
+            <a href="https://lp.indacescoladeatores.com.br/agendar-conversa-v1" target="_blank" rel="noopener" class="btn-pathway">
+              <span>Agendar Conversa</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       RODAPÉ CANÔNICO INDAC (references/header-footer.html)
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="indac-wrap">
+      <div class="footer-grid">
+        <div class="footer-info">
+          <img src="https://indacescoladeatores.com.br/wp-content/uploads/2025/10/log.png" alt="INDAC Escola de Atores" class="footer-logo" height="44" loading="lazy">
+          <p class="footer-address">
+            Rua Clélia, 658 · Barra Funda<br>
+            São Paulo · SP, 05042-000
+          </p>
+        </div>
+        <div>
+          <h2 class="footer-title">Contato</h2>
+          <ul class="footer-list">
+            <li><a href="https://wa.me/5511945140140" target="_blank" rel="noopener">(11) 94514-0140</a></li>
+            <li><a href="mailto:secretaria.indac@gmail.com">secretaria.indac@gmail.com</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="footer-title">Siga a INDAC</h2>
+          <ul class="footer-list">
+            <li><a href="https://www.instagram.com/indac_escoladeatores" target="_blank" rel="noopener">Instagram</a></li>
+            <li><a href="https://www.tiktok.com/@indac_escoladeatores" target="_blank" rel="noopener">TikTok</a></li>
+            <li><a href="https://www.facebook.com/teatroindac" target="_blank" rel="noopener">Facebook</a></li>
+            <li><a href="https://www.linkedin.com/company/indac-teatro" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://www.youtube.com/@Indac_escoladeatores" target="_blank" rel="noopener">YouTube</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>Fotografia: Allan Bravos · Direção: Cris Urbinatti</p>
+        <p>© INDAC · Escola de Atores. Todos os direitos reservados.</p>
+        <p class="dev-signature">Desenvolvido por: <a href="https://api.whatsapp.com/send?phone=5585991048383" target="_blank" rel="noopener">Mailson Tomaz</a></p>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+</body>
+</html>

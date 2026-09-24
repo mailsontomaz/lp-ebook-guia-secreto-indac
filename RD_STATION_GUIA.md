@@ -1,161 +1,149 @@
-# Manual Oficial de Publicação — Landing Page Ebook INDAC
+# Manual Oficial de Publicação: LPs Ebook & Obrigado INDAC
 ### "O Guia (Não Tão) Secreto Para Se Tornar Ator" · RD Station Marketing
 
-Este guia contém as instruções definitivas para publicação, configuração de formulário, hospedagem de arquivo e automação de marketing da nova Landing Page de captura do **INDAC Escola de Atores** dentro do **RD Station Marketing**.
+Este manual orienta a publicação, parametrização do formulário, hospedagem de mídias e automação de marketing para a nova Landing Page de captura e a respectiva Landing Page de obrigado do **INDAC Escola de Atores** no **RD Station Marketing**.
 
-O código-fonte pronto para cópia e colagem está no arquivo:
-👉 **[`rd_station_ebook_lp.html`](file:///c:/Users/mails/OneDrive/Área%20de%20Trabalho/INDAC/LP%20Ebook%20-%20Guia%20Secreto/rd_station_ebook_lp.html)**
-
----
-
-## 1. Visão Geral da Landing Page e Design System
-
-A página foi construída em estrita conformidade com as diretrizes do **Design System INDAC 2025** documentadas em [`Design System INDAC.dc.html`](file:///c:/Users/mails/OneDrive/Área%20de%20Trabalho/INDAC/LP%20Ebook%20-%20Guia%20Secreto/Design%20System%20INDAC.dc.html):
-
-| Elemento | Padrão INDAC | Aplicação na LP |
-| :--- | :--- | :--- |
-| **Cores Principais** | Preto de Palco (`#141414`), Vermelho Cortina (`#D9342B`), Creme Refletor (`#F5F1E8`) | 70% Preto, 22% Creme, 8% Vermelho (ação e ênfase) |
-| **Cores de Apoio** | Preto Suave (`#1C1C1C`), Vermelho Hover (`#A8231D`), WhatsApp (`#25D366`) | Cards de conteúdo, estados de hover e ícones |
-| **Tipografia** | **Anton** (Display / Títulos), **Merriweather** (Editorial / Manifesto), **Montserrat** (Interface / Corpo) | Carregamento otimizado via Google Fonts em requisição única |
-| **Raios de Borda** | **Estritamente 0 (reto) ou 999px (pílula)** | Zero cantos intermediários (sem 4px, 8px, 12px) |
-| **Ícones & Mídia** | **100% Vetoriais em SVG** | **Zero GIFs**, animações CSS sutis e performáticas |
-
-### Arquitetura de Seções:
-1. **Header Fixo / Proporcional**:
-   - Marca oficial INDAC com pílula vermelha vertical (`14px x 28px`), tipografia em *Anton* e subtítulo *"Escola de Atores"*.
-   - Botão direto para atendimento no WhatsApp oficial (`(11) 99616-0533`).
-2. **Hero de Alta Conversão**:
-   - Título principal: *"O Guia (Não Tão) Secreto Para Se Tornar Ator: Tudo o que não te contam, mas que muda tudo. Sua Jornada Autêntica do Zero ao DRT"*.
-   - Imagem de mockup oficial em alta resolução (`Book_and_smartphone_displaying_d…_2K_20260923191228.jpeg`) com fallback automático livre de recursão.
-   - Card dramático com Skeleton Loader e formulário incorporado do RD Station (`mt-lp-ebook-guia-secreto-95bee7fc70bce7a08668`).
-3. **Fluxo Pós-Conversão Inteligente (JavaScript)**:
-   - Ao preencher e enviar o formulário, a página transiciona automaticamente sem recarregar a tela:
-     - Botão de **download imediato** do arquivo PDF (`Ebook_Guia_Secreto_Ator_Indac_Master.pdf`).
-     - Alerta visual garantindo que o lead **também recebeu uma cópia por e-mail** para acessar quando e onde quiser.
-     - Chamada de destaque convidando para responder ao **Quiz de Perfil Artístico**.
-4. **Seção 01 — Conteúdo Estratégico do Ebook**:
-   - 4 pilares: A verdade sobre o DRT e exigências do SATED; A preparação de voz, corpo e cena; O mercado real de audições e castings; e a tradição dos 50 anos do INDAC formando o ator-criador.
-5. **Seção 02 — Respiro Creme (Manifesto Teatral)**:
-   - Seção editorial em fundo Creme (`#F5F1E8`) e tipografia *Merriweather* para quebrar o peso escuro e conectar o visitante com a filosofia cênica da escola.
-6. **Seção 03 — Conheça Outros Caminhos no INDAC**:
-   - Cards com links diretos para as experiências presenciais e de atendimento:
-     - **Imersão Cênica**: [https://lp.indacescoladeatores.com.br/imersao-cenica](https://lp.indacescoladeatores.com.br/imersao-cenica)
-     - **Visite o INDAC**: [https://lp.indacescoladeatores.com.br/visiteoindac](https://lp.indacescoladeatores.com.br/visiteoindac)
-     - **Agendar Conversa**: [https://lp.indacescoladeatores.com.br/agendar-conversa-v1](https://lp.indacescoladeatores.com.br/agendar-conversa-v1)
-7. **Seção 04 — Última Sessão: Destaque do Quiz de Perfil Artístico**:
-   - Chamada de impacto com grafismo teatral em arcos aninhados: *"Qual é o seu perfil artístico?"*, convidando o lead a descobrir seus pontos fortes em 2 minutos com link para:
-     - [https://lp.indacescoladeatores.com.br/quiz-perfil-artisticov1](https://lp.indacescoladeatores.com.br/quiz-perfil-artisticov1)
-8. **Rodapé Oficial INDAC**:
-   - Padrão oficial com endereço da sede histórica na Rua Clélia, 658 — Barra Funda, São Paulo, links de navegação rápida, telefone/WhatsApp clicável e direitos reservados.
-9. **Barra Fixa Inferior Mobile**:
-   - Em smartphones (telas ≤ 767px), ao rolar a página para além do formulário, uma barra flutuante discreta oferece o botão *"Baixar Ebook Gratuito"*, que após a conversão se transforma automaticamente em *"Baixar Ebook (PDF)"*.
+Arquivos do ecossistema:
+- LP de captura para o RD: [`rd_station_ebook_lp.html`](./rd_station_ebook_lp.html)
+- LP de captura para teste local: [`index.html`](./index.html)
+- LP de obrigado para o RD: [`rd_station_obrigado_lp.html`](./rd_station_obrigado_lp.html)
+- LP de obrigado para teste local: [`obrigado.html`](./obrigado.html)
 
 ---
 
-## 2. Passo a Passo de Publicação no RD Station Marketing
+## 1. Visão Geral da Arquitetura
 
-### Passo 1: Criar a Landing Page
-1. No painel do **RD Station Marketing**, acesse o menu **Converter > Landing Pages**.
-2. Clique no botão **Criar Landing Page** (canto superior direito).
-3. Na galeria de modelos, selecione a aba **Modelos do Sistema** e escolha **Modelo em Branco**.
-4. Dê um nome à sua Landing Page (exemplo: `LP - Ebook Guia Secreto do Ator`).
+O processo de captura e entrega do ebook segue a metodologia oficial do INDAC:
+- **LP de Captura**: Foco total na conversão. No mobile (telas ≤ 767px), o formulário é exibido logo no início da página (acima de 812px de altura).
+- **Pós-conversão**: O formulário do RD Station Marketing redireciona o lead para uma **LP de obrigado separada**, onde mora o botão de download direto e o convite principal para o Quiz de Perfil Artístico. Não são utilizados scripts de interceptação de rede nem adivinhações via temporizadores.
+- **Identidade Visual**: 45 anos de história, 70% preto de palco (`#141414`), 22% creme refletor (`#F5F1E8`) e vermelho cortina (`#D9342B`) restrito a ≤ 10% da tela. Sem sombras decorativas em cards ou botões.
 
-### Passo 2: Configurar a Seção Base (Largura Fluida / Edge-to-Edge)
-1. No editor visual do RD Station, exclua todos os blocos e linhas padrões até sobrar apenas **uma única seção vazia**.
-2. Clique sobre a seção para abrir a barra lateral de propriedades (à direita):
-   - **Largura da Seção**: Selecione **Fluida (100%)** ou **1600 px** (o código já possui resets completos com `!important` para preencher 100% da viewport e eliminar margens indesejadas).
-   - **Espaçamento / Padding**: Defina todos os valores como **0**.
-   - **Cor de Fundo**: Defina como `#141414` ou transparente.
+---
 
-### Passo 3: Inserir o Bloco HTML
-1. No menu de componentes à esquerda do RD Station, localize o bloco **HTML** (ícone `</>`).
-2. Arraste o bloco HTML para dentro da seção configurada.
-3. Abra o arquivo **`rd_station_ebook_lp.html`** no seu editor de código, copie **todo o conteúdo (Ctrl+A e Ctrl+C)**.
-4. Cole todo o código dentro do editor do componente HTML no RD Station.
-5. Clique em **Aplicar** ou **Salvar**.
+## 2. Passo a Passo Parte A: Ações no Painel do RD Station
 
-### Passo 4: Configurar o Formulário no RD Station Form Builder (CRÍTICO)
+### A1. Ajuste do Formulário (Item 01 da Auditoria)
 No formulário de identificador `mt-lp-ebook-guia-secreto-95bee7fc70bce7a08668`:
-1. **Campos Recomendados**:
-   - Nome Completo (`name`) — Obrigatório
-   - E-mail (`email`) — Obrigatório
-   - Telefone / WhatsApp (`phone`) — Obrigatório
-   - Caixa de Consentimento LGPD (`privacy_policy`) — Recomendado
-2. **Ação Pós-Conversão (Atenção Máxima)**:
-   - Na aba **Ações do Formulário / Conversão**, configure:
-   - ✅ **Ação pós-conversão: "Permanecer na página e exibir mensagem"** (ou mensagem personalizada de confirmação).
-   - ⚠️ **NÃO escolha "Redirecionar para URL externa"**, pois o redirecionamento forçado impediria o visitante de ver o botão direto de download do PDF e o convite do Quiz que já estão implementados no card pós-conversão!
+1. **Texto do Botão de Envio**:
+   - Alterar o texto atual ("AGENDAR VISITA GRATUITA") para **"Quero meu guia gratuito"** (ou "Receba o guia"), alinhando o botão à oferta do ebook.
+2. **Campos do Formulário**:
+   - Manter os campos essenciais: Nome Completo, E-mail e Telefone/WhatsApp.
+   - Avaliar o campo select *"Como você gostaria que o teatro entrasse na sua vida?"*: manter se a equipe comercial precisar da qualificação, ou remover para reduzir a fricção na conversão.
+3. **Consentimento LGPD**:
+   - Ativar a caixa de aceite dos termos de privacidade e LGPD diretamente no construtor de formulários do RD.
+4. **Configuração de Pós-Conversão (Redirecionamento)**:
+   - Na aba de ações do formulário, selecionar a opção de **Redirecionamento para URL**.
+   - Inserir a URL pública da LP de obrigado criada no passo A3 (ex.: `https://lp.indacescoladeatores.com.br/guia-secreto-obrigado`).
 
-### Passo 5: Metadados e Publicação
-1. Na etapa de **Configurações**:
-   - **Título da Página**: `O Guia (Não Tão) Secreto Para Se Tornar Ator | INDAC`
-   - **Descrição da Página (SEO)**: `Baixe gratuitamente o guia definitivo do INDAC Escola de Atores sobre o ofício cênico, preparação vocal e corporal, audições e a jornada real para o DRT.`
-   - **URL da Página**: `lp.indacescoladeatores.com.br/guia-secreto-ator` (ou slug de preferência).
-2. Clique em **Publicar**!
+### A2. Upload de Arquivos no Gerenciador de Mídias do RD
+No painel do RD Station Marketing, acesse **Conteúdo > Gerenciador de Arquivos**:
+1. **Ebook em PDF**:
+   - Faça o upload do arquivo `Ebook_Guia_Secreto_Ator_Indac_Master.pdf`.
+   - Copie a URL pública absoluta gerada (exemplo: `https://d335luupugsy2.cloudfront.net/medias/indac/Ebook_Guia_Secreto_Ator_Indac_Master.pdf`).
+2. **Mockup do Ebook**:
+   - Faça o upload do mockup otimizado em WebP ou JPEG (arquivo de imagem do projeto).
+   - Copie a URL pública absoluta gerada.
+3. **Fotografia Real de Palco**:
+   - Faça o upload de uma foto real de espetáculo do INDAC (crédito: Allan Bravos).
+   - Copie a URL pública absoluta gerada.
 
----
+### A3. Criação e Publicação das Duas Landing Pages
+Para cada uma das páginas (Captura e Obrigado):
+1. Acesse **Converter > Landing Pages** e clique em **Criar Landing Page**.
+2. Selecione a aba **Modelos do Sistema** e escolha o **Modelo em Branco**.
+3. Exclua todos os elementos pré-existentes até restar apenas uma única seção.
+4. Configure a seção com:
+   - **Largura**: Fluida (100%).
+   - **Padding / Margem**: Todos zerados (0).
+   - **Cor de Fundo**: `#141414` ou transparente.
+5. Arraste um componente **HTML (`</>`)** para dentro da seção.
+6. Copie e cole o código correspondente:
+   - Para a captura: cole o conteúdo de [`rd_station_ebook_lp.html`](./rd_station_ebook_lp.html).
+   - Para o obrigado: cole o conteúdo de [`rd_station_obrigado_lp.html`](./rd_station_obrigado_lp.html).
+7. Defina os títulos de página, slugs amigáveis e publique ambas.
 
-## 3. Como Vincular o Arquivo PDF do Ebook
-
-O arquivo PDF master oficial do ebook é o **`Ebook_Guia_Secreto_Ator_Indac_Master.pdf`** (localizado na pasta do projeto).
-
-### Opção A: Hospedagem direta no RD Station (Altamente Recomendado)
-1. No RD Station Marketing, acesse **Conteúdo > Gerenciador de Arquivos**.
-2. Faça o upload do arquivo `Ebook_Guia_Secreto_Ator_Indac_Master.pdf`.
-3. Copie a URL pública gerada pelo RD Station (exemplo: `https://d335luupugsy2.cloudfront.net/medias/indac/Ebook_Guia_Secreto_Ator_Indac_Master.pdf`).
-4. No arquivo `rd_station_ebook_lp.html`, localize o botão com `id="btn-download-pdf"` e substitua o valor de `href`:
-   ```html
-   <a href="https://d335luupugsy2.cloudfront.net/.../Ebook_Guia_Secreto_Ator_Indac_Master.pdf" download="Ebook_Guia_Secreto_Ator_Indac_Master.pdf" target="_blank" rel="noopener noreferrer" class="btn-download-ebook" id="btn-download-pdf">
-     Baixar Ebook Agora (PDF)
-   </a>
-   ```
-5. Atualize também a variável de configuração no topo do `<script>`:
-   ```javascript
-   var PDF_DOWNLOAD_HREF = "https://d335luupugsy2.cloudfront.net/.../Ebook_Guia_Secreto_Ator_Indac_Master.pdf";
-   ```
-
-### Opção B: Envio Automático por E-mail (Fluxo de Automação RD Station)
-Para cumprir a promessa visual exibida no aviso *"Enviamos uma cópia para o seu e-mail"*:
-1. No menu **Relacionar > Automação de Marketing** do RD Station:
-2. Crie um novo fluxo de automação com o gatilho:
-   - **Condição de Entrada**: *Converteu no evento: Formulário da LP do Ebook (`mt-lp-ebook-guia-secreto-95bee7fc70bce7a08668`)*.
-3. Ação: **Enviar E-mail**.
-4. Configure o e-mail de entrega:
-   - **Assunto**: `Aqui está o seu Guia Secreto Para Se Tornar Ator 🎭`
-   - **Corpo do e-mail**: Mensagem acolhedora com botão de download do PDF e um link convidando o aluno a fazer o **Quiz de Perfil Artístico** (`https://lp.indacescoladeatores.com.br/quiz-perfil-artisticov1`).
+### A4. Automação de E-mail de Entrega
+Acesse **Relacionar > Automação de Marketing**:
+1. Crie um fluxo de automação com o gatilho de entrada:
+   - *Converteu no formulário: `mt-lp-ebook-guia-secreto-95bee7fc70bce7a08668`*.
+2. Adicione o passo de envio de e-mail imediato:
+   - **Assunto**: `Aqui está o seu Guia Para Se Tornar Ator 🎭`
+   - **Conteúdo**: Mensagem de boas-vindas com o link absoluto para baixar o PDF e o convite para realizar o Quiz de Perfil Artístico.
 
 ---
 
-## 4. Arquitetura do Script de Detecção Pós-Conversão
+## 3. Passo a Passo Parte B: Substituição de Placeholders no Código
 
-O script embutido em `rd_station_ebook_lp.html` foi construído com múltiplos níveis de contingência para garantir que a tela de download e convite ao Quiz seja exibida com 100% de confiabilidade:
+Antes da publicação definitiva no componente HTML do RD, localize e substitua os placeholders marcados com comentários nos códigos-fonte:
 
-1. **Monitoramento Nativo de XMLHttpRequest / Fetch**:
-   - Intercepta requisições de envio direcionadas às APIs do RD Station (`rdstation`, `rd.services`, `conversions`).
-   - Dispara a transição de sucesso no exato momento em que o servidor do RD Station retorna status `200 OK`, eliminando temporizadores arbitrários.
-2. **`MutationObserver` Inteligente**:
-   - Monitora alterações no DOM do contêiner `#mt-lp-ebook-guia-secreto-95bee7fc70bce7a08668`.
-   - Ignora palavras-chave durante o carregamento inicial dos campos (evitando falsos positivos).
-   - Detecta o desaparecimento do formulário ou a aparição de classes como `.rd-form-success`, `.bricks-form__success` e `.submitted`.
-3. **Listener de `submit` com Verificação de Erros**:
-   - Registra o início da submissão e, caso o formulário não apresente mensagens de erro de validação (`.error`), fornece uma transição suave de contingência.
-4. **Listeners de Custom Events e `postMessage`**:
-   - Compatível com implementações em iframe e eventos customizados (`rdstation:conversion`, `rdstation.form.success`).
-5. **Persistência de Sessão**:
-   - Salva o estado convertido em `sessionStorage` para que, caso o lead recarregue a página, ele permaneça na tela de sucesso com acesso direto ao download.
+### 1. Na LP de Captura (`rd_station_ebook_lp.html` e `index.html`):
+- `<!-- TROCAR: URL do mockup em WebP no Gerenciador de Arquivos do RD -->`
+  - Substituir a URL provisória da tag `<img>` do hero pela URL definitiva hospedada no CDN do RD.
+- `<!-- TROCAR: URL da foto no RD -->`
+  - Substituir o endereço da imagem na Seção 02 pela foto real de espetáculo do INDAC (crédito: Allan Bravos).
+
+### 2. Na LP de Obrigado (`rd_station_obrigado_lp.html` e `obrigado.html`):
+- `<!-- TROCAR: URL absoluta do PDF no Gerenciador de Arquivos do RD -->`
+  - Substituir o valor do atributo `href` no botão de download pela URL pública absoluta gerada no Gerenciador de Arquivos do RD Station.
+- `<!-- TROCAR: URL do mockup em WebP no Gerenciador de Arquivos do RD -->`
+  - Inserir a URL definitiva do mockup no hero da página de agradecimento.
 
 ---
 
-## 5. Checklist de Verificação Pré-Publicação
+## 4. Padrão Canônico de Header e Rodapé
 
-- [x] **Identidade Visual**: Fiel ao Design System INDAC (`#141414`, `#D9342B`, `#F5F1E8`).
-- [x] **Tipografia**: Anton (Display), Merriweather (Editorial) e Montserrat (UI).
-- [x] **Sem GIFs**: Uso exclusivo de SVGs inline de alta performance.
-- [x] **Raios de Borda**: Restritos rigorosamente a 0 (reto) ou 999px (pílula).
-- [x] **Hero Image**: Mockup oficial configurado com fallback local à prova de loops recursivos.
-- [x] **Formulário RD Station**: ID oficial `mt-lp-ebook-guia-secreto-95bee7fc70bce7a08668` com script estável.
-- [x] **Pós-Conversão**: Download direto do PDF, aviso de cópia por e-mail e convite ao Quiz.
-- [x] **Seção de Outros Caminhos**: Links funcionais para Imersão Cênica, Visite o INDAC e Agendar Conversa.
-- [x] **Última Seção da LP**: Bloco destacado com arcos aninhados para o Quiz de Perfil Artístico.
-- [x] **Rodapé Oficial**: Padrão INDAC com endereço da Rua Clélia e WhatsApp clicável.
-- [x] **Mobile Sticky Bar**: Barra flutuante exclusiva para telas móveis com alternância pós-conversão.
+O header e o rodapé aplicados em todas as LPs são os modelos canônicos da escola, documentados e mantidos em:
+👉 [`.agents/skills/indac-lp-rdstation/references/header-footer.html`](./.agents/skills/indac-lp-rdstation/references/header-footer.html)
+
+Eles incluem:
+- Imagem oficial da marca (`log.png`) com 36px no topo e 44px na base.
+- Botão oficial de atendimento para WhatsApp (`https://wa.link/izisk6`) com glifo oficial em verde `#25D366`.
+- Telefone oficial `(11) 94514-0140` e e-mail `secretaria.indac@gmail.com`.
+- Links para as 5 redes institucionais (Instagram, TikTok, Facebook, LinkedIn, YouTube).
+- Créditos fotográficos e de direção, além da assinatura do desenvolvedor.
+
+---
+
+## 5. Checklist de QA Pré-Publicação
+
+Checklist copiado da especificação da skill em [`.agents/skills/indac-lp-rdstation/references/checklist.md`](./.agents/skills/indac-lp-rdstation/references/checklist.md):
+
+### Marca
+- [ ] A logo é a imagem `log.png` oficial no header (36px) e no rodapé (44px). Não é texto.
+- [ ] Header e rodapé são idênticos a `header-footer.html`: WhatsApp (11) 94514-0140, e-mail, 5 redes, créditos, assinatura.
+- [ ] Nenhum texto interno aparece na página.
+- [ ] O tempo de história é "45 anos" em todas as ocorrências.
+
+### Cor e forma
+- [ ] Um único botão sólido vermelho por bloco. No mobile, nunca dois na mesma tela (a barra fixa some no bloco do quiz).
+- [ ] As tags e rótulos dos cards não são todos vermelhos. O vermelho fica ≤10% da tela.
+- [ ] Sem sombras decorativas em cards ou botões.
+- [ ] Raios só `0` ou `999px`.
+- [ ] Grafismo grande e sangrando pela borda, um por bloco, com opacidade ≥ 0,4.
+
+### Tipografia e ícones
+- [ ] O corpo tem ≥ 15px em todos os blocos, e nenhum texto de leitura tem < 14px.
+- [ ] Anton só em caixa alta, Merriweather no editorial e Montserrat na interface.
+- [ ] Nenhum GIF, emoji ou caractere fazendo papel de ícone. Os ícones são SVG.
+
+### Conversão
+- [ ] Em 375×812, o formulário começa acima de 812px.
+- [ ] O texto real do botão do formulário renderizado combina com a oferta da LP.
+- [ ] O formulário tem consentimento LGPD.
+- [ ] Todo link de arquivo é absoluto (não termina em arquivo relativo).
+- [ ] O pós-conversão redireciona para a LP de obrigado. Não há script de detecção de conversão.
+- [ ] A LP de obrigado tem: download, aviso de e-mail, convite ao quiz e caminhos.
+
+### Texto e fatos
+- [ ] Cada afirmação sobre quiz, imersão, visita e conversa foi conferida na página real.
+- [ ] O texto esclarece que a formação habilita o aluno a solicitar o registro profissional.
+- [ ] Fala direta: sem adjetivos inflados ou jargões de marketing.
+- [ ] Nenhum selo ou pílula quebra de linha a ponto de ficar por cima de outro elemento no mobile.
+
+### Técnico
+- [ ] Imagens otimizadas com `width`/`height` e `loading="lazy"` fora do hero.
+- [ ] Hierarquia de títulos: uma `<h1>`, uma `<h2>` por seção, sem pular nível. O conteúdo fica em `<main>`.
+- [ ] Tem `@media (prefers-reduced-motion: reduce)`. Hover só em elementos clicáveis.
+- [ ] A barra fixa do mobile não cobre o rodapé (`padding-bottom` + `env(safe-area-inset-bottom)`).
+- [ ] O corpo de `index.html` e de `rd_station_ebook_lp.html` é idêntico.
+- [ ] Não há rolagem horizontal em 375px.
